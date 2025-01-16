@@ -4,9 +4,9 @@ require_once "config/sessionControl.php";
 require_once("router/router.php");
 require_once("views/layout/head.php");
 
-
 $vista = router();
 ?>
+
 <div class="container-fluid">
     <div class="row">
         <?php
@@ -18,6 +18,9 @@ $vista = router();
         ?>
     </div>
 </div>
-<?php
-require_once("views/layout/footer.php");
-?>
+
+</div class="footer">
+    <?php
+        require_once("views/layout/footer.php");
+    ?>
+<div>

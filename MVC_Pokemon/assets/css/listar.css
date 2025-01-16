@@ -1,0 +1,133 @@
+#contenedor_listar{
+  width: 40%;
+  margin: 0 auto;
+}
+
+#contenedor_listar>h1{
+    text-align: center;
+    color: white;
+}
+
+.table-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+
+  }
+  tr{
+    border-radius: 10px;
+  }
+  
+  /* Table header */
+  .table-dark {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .table-dark th {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  /* Table rows */
+  .table-light tbody tr {
+    background-color: #f8f9fa;
+  }
+  
+  .table-light tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+  }
+  
+  .table-light tbody tr:hover {
+    background-color: #dee2e6;
+    cursor: pointer;
+  }
+  
+  /* Table cells */
+  td, th {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Action links */
+  td a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Buttons (optional if you re-enable them) */
+  .btn-success {
+    color: white;
+    background-color: #28a745;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+
+  .btn-listar-borrar{
+    background-color: red;
+    border-radius: 4px;
+    width: 60px;
+    height: 30px;
+    border: transparent;
+  }
+
+  .btn-listar-borrar:hover{
+    background-color: rgb(168, 0, 0);
+  }
+
+  .btn-listar-ver{
+    background-color: green;
+    border-radius: 4px;
+    width: 60px;
+    height: 30px;
+    border: transparent;
+  }
+
+  .btn-listar-ver:hover{
+    background-color: rgb(0, 85, 0);
+  }
+
+  .btn-listar-borrar>a, 
+  .btn-listar-ver>a, 
+  .btn-listar-borrar>a:hover,
+  .btn-listar-ver>a:hover{
+    color:white;
+    text-decoration: none;
+  }
+
+
+
+  /*borders redondeados*/
+  table{
+    border-radius: 10px;
+  }
+
+  .table-dark th:first-child {
+    border-top-left-radius: 10px; /* Redondear la esquina superior izquierda de la tabla */
+  }
+  
+  .table-dark th:last-child {
+    border-top-right-radius: 10px; /* Redondear la esquina superior derecha de la tabla */
+  }
+  
+  table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px; /* Redondear la esquina inferior izquierda de la tabla */
+  }
+  
+  table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px; /* Redondear la esquina inferior derecha de la tabla */
+  }

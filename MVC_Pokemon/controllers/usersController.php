@@ -1,7 +1,6 @@
 <?php
 require_once "assets/php/funciones.php";
 require_once "models/userModel.php";
-require_once "controllers/projectsController.php";
 
 class UsersController
 {

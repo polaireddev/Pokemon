@@ -1,0 +1,147 @@
+@import url("fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr, 4fr;
+  grid-template-rows: auto minmax(100vh, 5fr) auto;
+  margin: 30px;
+  background-color: #222222;
+
+}
+
+#div_middle > h1 {
+  font-family: "PokemonSolid";
+  letter-spacing: 5px;
+  color: #f3f3f3;
+  font-size: 30px;
+}
+
+
+
+/*HEADER*/
+.header {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+#header_contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 50px 10px 50px;
+  align-items: flex-end;
+  background-image: url("../img/fondo2.jpg");
+  background-size: contain;
+  background-position: center -50px;
+  background-repeat: repeat;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 230px;
+}
+
+#header_contenedor a {
+  text-decoration: none;
+  color: white;
+}
+
+/*divend*/
+#div_end{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#div_end a{
+    font-size: 10px;
+}
+#signout{
+    width: 20px;
+    fill: #ffff;
+}
+
+/*NAVBAR*/
+
+.container-fluid {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+/* Estilo general */
+.position-sticky{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#sidebarMenu{
+    border-bottom: 1px solid black;
+    background-color: #e6cc4a;
+    border-radius: 5px;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: "PokemonSolid";
+  padding: 10px 15px;
+  display: block;
+  color: #222222;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none; /* Oculta el menú por defecto */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* Mostrar el menú al pasar el ratón por el contenedor */
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/*Footer*/
+
+.footer {
+  grid-row-start: 3;
+  grid-row-end: -1;
+}

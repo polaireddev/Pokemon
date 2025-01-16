@@ -45,13 +45,10 @@ class UserModel
 
 
 
-
-
-
 //INSERTAR
     public function insert(array $user): ?int 
     {
-        $sql = "INSERT INTO users(usuario, password, nick)  VALUES (:usuario, :password, :nick);";
+        $sql = "INSERT INTO users(usuario, password)  VALUES (:usuario, :password);";
 
         try {
             $sentencia = $this->conexion->prepare($sql);
@@ -60,7 +57,7 @@ class UserModel
             $arrayDatos = [
                 ':usuario' => $user["usuario"],
                 ':password' => $hashedPassword,
-                ':nick' => $user["nick"],
+                
             ];
             $resultado = $sentencia->execute($arrayDatos);
 
