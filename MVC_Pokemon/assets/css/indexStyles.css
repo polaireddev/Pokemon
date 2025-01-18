@@ -65,18 +65,41 @@ body {
 }
 
 /*NAVBAR*/
-
+/*
 .container-fluid {
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 2;
 }
+*/
+
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  
+  
+}
+
+/*
+#contenedor_main{
+  border: 1px solid red;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+/*
+ #contenedor_navbar{
+  border: 1px solid red;
+ 
+ }
+  */
 
 /* Estilo general */
 .position-sticky{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -84,6 +107,9 @@ body {
     border-bottom: 1px solid black;
     background-color: #e6cc4a;
     border-radius: 5px;
+    padding: 20px;
+    height: 100%;
+    
 }
 
 .nav-item {

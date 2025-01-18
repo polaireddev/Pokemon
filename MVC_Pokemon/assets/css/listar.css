@@ -1,15 +1,27 @@
-#contenedor_listar{
-  width: 40%;
+#contenedor_main{
+  width: 100%;
   margin: 0 auto;
 }
+#contenedor_listar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  
+  
+}
+
 
 #contenedor_listar>h1{
     text-align: center;
     color: white;
+    
 }
 
 .table-list {
-    width: 100%;
+    width: 60%;
     border-collapse: collapse;
     margin: 20px 0;
     background-color: #fff;

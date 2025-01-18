@@ -8,7 +8,7 @@ $vista = router();
 ?>
 
 <div class="container-fluid">
-    <div class="row">
+    
         <?php
         require_once "views/layout/navbar.php";
 
@@ -16,7 +16,7 @@ $vista = router();
         else require_once($vista);
 
         ?>
-    </div>
+    
 </div>
 
 </div class="footer">

@@ -5,7 +5,8 @@ $controlador = new UsersController();
 $users = $controlador->listar(comprobarSiEsBorrable: true);
 $visibilidad = "hidden";
 ?>
-<main id="contenedor_listar">
+<div  id="contenedor_main">
+    <main id="contenedor_listar">
     <div>
         <h1 class="h3">Listar usuario</h1>
     </div>
@@ -73,3 +74,5 @@ $visibilidad = "hidden";
     </div>
 
 </main>
+
+</div>
