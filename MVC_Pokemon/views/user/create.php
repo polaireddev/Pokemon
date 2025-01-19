@@ -12,11 +12,11 @@ if (isset($_REQUEST["error"])) {
   $visibilidad = "visible";
 }
 ?>
-<main>
-<div>
+<main id="contenedor_main">
+<div id="titulo_usuario">
     <h1 class="h3">Añadir usuario</h1>
 </div>
-<div id="contenido">
+<div id="contenido_form">
     <div><?= $cadena ?></div>
     <form id="formCreateUser" action="index.php?tabla=user&accion=guardar&evento=crear" method="POST" >
     <div>
@@ -30,6 +30,10 @@ if (isset($_REQUEST["error"])) {
         <input type="password" required class="form-control" id="password" name="password" value="<?= $_SESSION["datos"]["password"] ?? "" ?>" placeholder="Password">
         <?= isset($errores["password"]) ? '<div  id="usuario-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "password") . '</div>' : ""; ?>
     </div>
+    <button type="submit">Guardar</button>
+    <a href="index.php">Listar</a>
+    </form>
+    
     <?php
     //Una vez mostrados los errores, los eliminamos
     unset($_SESSION["datos"]);

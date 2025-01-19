@@ -32,6 +32,7 @@ $visibilidad = "hidden";
             <div class="<?= $clase ?>" <?= $visibilidad ?> role="alert">
                 <?= $mensaje ?>
             </div>
+            <center>
             <table class="table-list table-light table-hover">
                 <thead class="table-dark">
                     <tr>
@@ -68,9 +69,14 @@ $visibilidad = "hidden";
                     ?>
                 </tbody>
             </table>
+                
+            </center>
+            
             <?php
         endif;
         ?>
+        </div>
+    
     </div>
 
 </main>

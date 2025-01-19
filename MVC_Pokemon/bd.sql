@@ -1,3 +1,4 @@
+-- SQLBook: Code
 drop database  if exists pokemons;
 
 CREATE DATABASE pokemons;
@@ -51,45 +52,45 @@ CONSTRAINT pokemon_id_equipo FOREIGN KEY (`pokemon_id`) REFERENCES pokemon (`id`
 INSERT INTO users (usuario, password, administrador) VALUES ("admin", 12345678, true);
 
 INSERT INTO pokemon (nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen) VALUES 
-("Venusaur", 21, 18, "Planta", 3, NULL, "ivysaur.gif"), 	#1
-("Ivysaur", 17, 13, "Planta", 2, 1, "ivysaur.gif"),			#2
-("Bulbasaur", 12, 10, "Planta", 1, 2, "bulbasaur.gif"),		#3
+("venusaur", 21, 18, "Planta", 3, NULL, "assets/pokemons/venusaur"), 	#1
+("ivysaur", 17, 13, "Planta", 2, 1, "assets/pokemons/ivysaur"),			#2
+("bulbasaur", 12, 10, "Planta", 1, 2, "assets/pokemons/bulbasaur"),		#3
 
-("Charizard", 25, 15, "Fuego", 3, NULL, "charizard.gif"),	#4
-("Charmeleon", 18, 13, "Fuego", 2, 4, "charmaleon.gif"),	#5
-("Charmander", 14, 8, "Fuego", 1, 5, "charmander.gif"),		#6
+("charizard", 25, 15, "Fuego", 3, NULL, "assets/pokemons/charizard"),	#4
+("charmeleon", 18, 13, "Fuego", 2, 4, "assets/pokemons/charmeleon"),	#5
+("charmander", 14, 8, "Fuego", 1, 5, "assets/pokemons/charmander"),		#6
 
-("Blastoise", 19, 23, "Agua", 3, NULL, "blastoise.gif"),	#7
-("Wartortle", 14, 17, "Agua", 2, 7, "wartortle.gif"),		#8
-("Squirtle", 10, 11, "Agua", 1, 8, "squirtel.gif"),			#9
+("blastoise", 19, 23, "Agua", 3, NULL, "assets/pokemons/blastoise"),	#7
+("wartortle", 14, 17, "Agua", 2, 7, "assets/pokemons/wartortle"),		#8
+("squirtle", 10, 11, "Agua", 1, 8, "assets/pokemons/squirtel"),			#9
 
-("Raichu", 16, 17, "Electrico", 3, NULL, "raichu.gif"),		#10
-("Pikachu", 16, 17, "Electrico", 2, 10, "pikachu.gif"),		#11
-("Pichu", 9, 9, "Electrico", 1, 11, "pichu.gif"),			#12
+("raichu", 16, 17, "Electrico", 3, NULL, "assets/pokemons/raichu"),		#10
+("pikachu", 16, 17, "Electrico", 2, 10, "assets/pokemons/pikachu"),		#11
+("pichu", 9, 9, "Electrico", 1, 11, "assets/pokemons/pichu"),			#12
 
-("Infernape", 16, 17, "Fuego", 3, NULL, "infernape.gif"),	#13
-("Monferno", 16, 17, "Fuego", 2, 13, "monferno.gif"),		#14
-("Chimchar", 16, 17, "Fuego", 1, 14, "chimchar.gif"),		#15
+("infernape", 16, 17, "Fuego", 3, NULL, "assets/pokemons/infernape"),	#13
+("monferno", 16, 17, "Fuego", 2, 13, "assets/pokemons/monferno"),		#14
+("chimchar", 16, 17, "Fuego", 1, 14, "assets/pokemons/chimchar"),		#15
 
-("Empoleon", 16, 17, "Agua", 3, NULL, "empoleon.gif"),		#16
-("Prinplup", 16, 17, "Agua", 2, 16, "prinplup.gif"),		#17
-("Piplup", 16, 17, "Agua", 1, 17, "piplup.gif"),			#18
+("empoleon", 16, 17, "Agua", 3, NULL, "assets/pokemons/empoleon"),		#16
+("prinplup", 16, 17, "Agua", 2, 16, "assets/pokemons/prinplup"),		#17
+("piplup", 16, 17, "Agua", 1, 17, "assets/pokemons/piplup"),			#18
 
-("Torterra", 16, 17, "Planta", 3, NULL, "torterra.gif"),	#19
-("Grotle", 16, 17, "Planta", 2, 19, "grotle.gif"),			#20
-("Turtwig", 16, 17, "Planta", 1, 20, "turtwig.gif"),		#21
+("torterra", 16, 17, "Planta", 3, NULL, "assets/pokemons/torterra"),	#19
+("grotle", 16, 17, "Planta", 2, 19, "assets/pokemons/grotle"),			#20
+("turtwig", 16, 17, "Planta", 1, 20, "assets/pokemons/turtwig"),		#21
 
-("Luxray", 16, 17, "Electrico", 3, NULL, "luxray.gif"),		#22
-("Luxio", 16, 17, "Electrico", 2, 22, "luxio.gif"),			#23
-("Shinx", 16, 17, "Electrico", 1, 23, "shinx.gif"),			#24
+("luxray", 16, 17, "Electrico", 3, NULL, "assets/pokemons/luxray"),		#22
+("luxio", 16, 17, "Electrico", 2, 22, "assets/pokemons/luxio"),			#23
+("shinx", 16, 17, "Electrico", 1, 23, "assets/pokemons/shinx"),			#24
 
-("Golem", 16, 17, "Tierra", 3, NULL, "golem.gif"),			#25
-("Graveler", 16, 17, "Tierra", 2, 25, "graveler.gif"),		#26
-("Geodude", 16, 17, "Tierra", 1, 26, "geodude.gif"),		#27
+("golem", 16, 17, "Tierra", 3, NULL, "assets/pokemons/golem"),			#25
+("graveler", 16, 17, "Tierra", 2, 25, "assets/pokemons/graveler"),		#26
+("geodude", 16, 17, "Tierra", 1, 26, "assets/pokemons/geodude"),		#27
 
-("Krookodile", 16, 17, "Tierra", 3, NULL, "krookodile.gif"),#28
-("Krokorok", 16, 17, "Tierra", 2, 28, "krokorok.gif"),		#29
-("Sandile", 16, 17, "Tierra", 1, 29, "sandile.gif");		#30
+("krookodile", 16, 17, "Tierra", 3, NULL, "assets/pokemons/krookodile"),#28
+("krokorok", 16, 17, "Tierra", 2, 28, "assets/pokemons/krokorok"),		#29
+("sandile", 16, 17, "Tierra", 1, 29, "assets/pokemons/sandile");		#30
 
 
 INSERT INTO users (usuario, password, partidas_ganadas, partidas_jugadas, partidas_perdidas, evoluciones_disponibles, imagen, administrador)

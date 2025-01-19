@@ -15,7 +15,7 @@
 
 
     <div id="div_start" class="div_header">
-        <a href=""> Usuario Conectado: ></a>
+        <a href=""> Usuario Conectado: > <?=$_SESSION["usuario"]->usuario?></a>
       </div>
   
       <div id="div_middle" class="div_header">

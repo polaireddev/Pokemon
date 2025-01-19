@@ -1,6 +1,9 @@
 <?php
 require_once "assets/php/funciones.php";
 require_once "models/userModel.php";
+require_once "controllers/pokemonController.php";
+require_once "controllers/userPokemonController.php";
+require_once "controllers/equipoController.php";
 
 class UsersController
 {
@@ -65,6 +68,45 @@ class UsersController
         } else {
             unset($_SESSION["errores"]);
             unset($_SESSION["datos"]);
+
+            //ASIGNAR 3 POKEMONS DE NIVEL 1
+            // Accedemos al controlador de pokemon para recibir un array con los ids de los posibles pokemons asignables (lvl 1)
+
+            $pokemonControl = new pokemonController();
+            $arrayIdPokemons = $pokemonControl->devolverPokemonsLvl1();
+
+                //Escogemos 3 Aleatorios
+
+                $pokemon1 = 3;//$arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                $pokemon2 = 3;//$arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                $pokemon3 = 3;//$arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+
+                while ($pokemon1 == $pokemon2 || $pokemon1 == $pokemon3 || $pokemon2 == $pokemon3){
+                    if($pokemon1 == $pokemon2){
+                        $pokemon2 = $arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                    }
+                    if($pokemon1 == $pokemon3){
+                        $pokemon3 = $arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                    }
+                    if($pokemon2 == $pokemon3){
+                        $pokemon3 = $arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                    }
+                }
+
+            //Asignamos en la tabla user pokemon
+            $userPokemonControl = new userPokemonController();
+            $userPokemonControl->asignarPokemons($id, $pokemon1); // id es del Usuario
+            $userPokemonControl->asignarPokemons($id, $pokemon2);
+            $userPokemonControl->asignarPokemons($id, $pokemon3);
+
+            //Asignamos en la tabla equipo
+            $equipoControl = new equipoController();
+            $equipoControl -> asignarPokemons($id, $pokemon1);
+            $equipoControl -> asignarPokemons($id, $pokemon2);
+            $equipoControl -> asignarPokemons($id, $pokemon3);
+            
+            
+
             header("location:index.php?tabla=user&accion=ver&id={$id}"); // CAMBIAR ESTO
             exit();
         }
