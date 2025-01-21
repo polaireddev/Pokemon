@@ -34,6 +34,13 @@
     border-radius: 10px;
   }
   
+
+  .table-list td:first-child { /*solo la primera columna*/
+    text-align: center;     /* Centrado horizontal de la columna de imágenes */
+    vertical-align: middle; /* Centrado vertical de la columna de imágenes */
+    padding: 30px 20px 30px 20px;
+  }
+  
   /* Table header */
   .table-dark {
     background-color: #343a40;
