@@ -34,7 +34,7 @@ function router (){
                 "editar"=>"edit.php"
         ],
 
-        "digimon"=>[ //añadir routas para clientes
+        "pokemon"=>[ //añadir routas para clientes
                 "crear"=>"create.php",
                 "buscar"=>"search.php",
                 "editar"=>"edit.php",

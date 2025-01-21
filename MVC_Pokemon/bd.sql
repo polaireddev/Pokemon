@@ -62,7 +62,7 @@ INSERT INTO pokemon (nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen)
 
 ("blastoise", 19, 23, "Agua", 3, NULL, "assets/pokemons/blastoise"),	#7
 ("wartortle", 14, 17, "Agua", 2, 7, "assets/pokemons/wartortle"),		#8
-("squirtle", 10, 11, "Agua", 1, 8, "assets/pokemons/squirtel"),			#9
+("squirtle", 10, 11, "Agua", 1, 8, "assets/pokemons/squirtle"),			#9
 
 ("raichu", 16, 17, "Electrico", 3, NULL, "assets/pokemons/raichu"),		#10
 ("pikachu", 16, 17, "Electrico", 2, 10, "assets/pokemons/pikachu"),		#11

@@ -22,9 +22,9 @@
           <a class="nav-link dropdown-toggle" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="far fa-user"></i> Pokemons</a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="index.php?tabla=client&accion=crear">Añadir</a></li>
-            <li><a class="dropdown-item" href="index.php?tabla=client&accion=listar">Listar </a></li>
-            <li><a class="dropdown-item" href="index.php?tabla=client&accion=buscar">Buscar </a></li>
+            <li><a class="dropdown-item" href="index.php?tabla=pokemon&accion=crear">Añadir</a></li>
+            <li><a class="dropdown-item" href="index.php?tabla=pokemon&accion=listar">Listar </a></li>
+            <li><a class="dropdown-item" href="index.php?tabla=pokemon&accion=buscar">Buscar </a></li>
           </ul>
         </li>
       </div>
