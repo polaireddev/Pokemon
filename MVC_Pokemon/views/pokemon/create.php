@@ -14,15 +14,25 @@ if (isset($_REQUEST["error"])) {
     $cadena = "Atención Se han producido Errores";
     $visibilidad = "visible";
 }
+// Verificar si se ha recibido el nivel a través de una solicitud AJAX
+if ( isset($_POST['nivel'])) {
+    $nivel = $_POST['nivel']; // Guardamos el nivel en una variable PHP
+    $_SESSION['nivel'] = $nivel;
 
-$nivelEvolucion = $_POST["nivelEvolucion"] ?? "";
+    
+}
+
+
 
 $pokemonControl = new pokemonController();
 $pokemons = $pokemonControl->listar();
 ?>
 
 <main id="contenedor_main">
-   
+    <?php
+var_dump($nivel)?? "";
+
+?>
     <div id="titulo_pokemon">
         <h1 class="h3">Añadir Pokemon</h1>
     </div>
@@ -62,7 +72,7 @@ $pokemons = $pokemonControl->listar();
 
             <div>
                 <label for="nivel">Nivel </label>
-                <select id="nivel" name="nivel"  onchange="this.form.submit()">
+                <select id="nivel" name="nivel" onchange="guardarNivel()">
                     <option value="">---- Elije el Nivel ----</option>
                     <option value="1">Nivel 1</option>
                     <option value="2">Nivel 2</option>
@@ -74,12 +84,8 @@ $pokemons = $pokemonControl->listar();
             <div>
                 <label for="id_evolucion">Evolución</label>
                 <select id="id_evolucion" name="id_evolucion">
-                    <option value="">---- Elije Evolución ----</option>
-                    <?php foreach ($pokemons as $pokemon): ?>
-                        <option value="<?= $pokemon->id ?>" <?= isset($datos["id_evolucion"]) && $datos["id_evolucion"] == $pokemon->id ? "selected" : null ?>>
-                            <?= "{$pokemon->id} - {$pokemon->nombre}" ?>
-                        </option>
-                    <?php endforeach; ?>
+                    
+
                 </select>
                 <?= isset($errores["id_evolucion"]) ? '<div id="id_evolucion-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "id_evolucion") . '</div>' : ""; ?>
             </div>
@@ -111,3 +117,70 @@ $pokemons = $pokemonControl->listar();
         ?>
     </div>
 </main>
+
+
+
+
+<
+
+<script>
+function guardarNivel() {
+    let nivelSeleccionado = document.getElementById('nivel').value;
+
+    if (nivelSeleccionado) {
+        // Guardar el nivel en el campo oculto
+
+        let xhr = new XMLHttpRequest();
+        
+        // Definir la petición AJAX
+        xhr.open("POST", "create.php", true); // Enviar la solicitud a la misma página (create.php)
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        // Configurar lo que sucede cuando se recibe la respuesta
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Mostrar la respuesta (opcional)
+                console.log("Nivel actualizado: " + xhr.responseText);
+            }
+        };
+        
+        // Enviar el nivel seleccionado al servidor
+        xhr.send("nivel=" + nivelSeleccionado);
+    }
+}
+</script>
+
+
+
+<!--
+<script>
+    // Función para actualizar las opciones de evolución según el nivel seleccionado
+    function actualizarEvoluciones() {
+        let nivel = document.getElementById('nivel').value; // Obtener el nivel seleccionado
+        let selectEvolucion = document.getElementById('id_evolucion');
+        selectEvolucion.innerHTML = '<option value="">---- Elije Evolución ----</option>'; // Limpiar las opciones previas
+
+        // Array que contiene las evoluciones disponibles según el nivel
+        let evoluciones = {
+            "1": [2, 3], // Si el nivel es 1, las evoluciones posibles son nivel 2 y 3
+            "2": [3], // Si el nivel es 2, la única evolución posible es nivel 3
+            "3": [] // Si el nivel es 3, no hay evoluciones
+        };
+
+        // Obtener las evoluciones posibles para el nivel seleccionado
+        let evolucionesDisponibles = evoluciones[nivel];
+
+        // Si hay evoluciones disponibles, se añaden al select
+        if (evolucionesDisponibles) {
+            evolucionesDisponibles.forEach(function(evolucion) {
+                let option = document.createElement('option');
+                option.value = evolucion;
+                option.textContent = 'Nivel ' + evolucion;
+                selectEvolucion.appendChild(option);
+            });
+        }
+    }
+</script>
+
+-->
+

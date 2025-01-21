@@ -65,11 +65,10 @@ class pokemonController
             $id = $this->model->insert($arrayPokemon);
         }
 
-        if ($id == null && $arrayPokemon["datos"]["id_evolucion"]==null) {
+        if ($id == null) {
             $_SESSION["errores"] = $errores;
             $_SESSION["datos"] = $arrayPokemon;
-            $nivel= $arrayPokemon["datos"]["nivel"];
-            header("location:index.php?tabla=pokemon&accion=crear&error=true&id={$id}&nivelEvolucion={$nivel}"); //CAMBIAR ESTO
+            header("location:index.php?tabla=pokemon&accion=crear&error=true&id={$id}"); //CAMBIAR ESTO
             exit();
         } else {
             unset($_SESSION["errores"]);
