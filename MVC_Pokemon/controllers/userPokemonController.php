@@ -19,6 +19,10 @@ class userPokemonController
 
     }
 
+    
+    public function mostrarPokemonsUsuario($id){
+        $this->model->mostrarPokemonsUsuarioModel($id);
+    }
 
 
 }

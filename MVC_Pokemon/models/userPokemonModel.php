@@ -11,7 +11,7 @@
         }
 
 
-        function asignarPokemonsModel($user_id, $pokemon_id){
+        public function asignarPokemonsModel($user_id, $pokemon_id){
 
             $sql = "INSERT INTO pokemon_usuario(usuario_id, pokemon_id)  VALUES (:usuario_id, :pokemon_id);";
 
@@ -31,6 +31,22 @@
             return null;
         }
 
+        }
+
+
+        public function mostrarPokemonsUsuarioModel($id){
+            try {
+
+                $sentencia = $this->conexion->prepare("SELECT * FROM pokemon_usuario WHERE usuario_id = :id;");
+                $arrayDatos = [":id" => $id];
+                $sentencia->execute($arrayDatos);
+    
+                $usuario_pokemons = $sentencia->fetchAll(PDO::FETCH_OBJ);
+                return $usuario_pokemons;
+            } catch (Exception $e) {
+                echo 'Excepción capturada: ', $e->getMessage(), "<br>";
+                return [];
+            }
         }
 
     }

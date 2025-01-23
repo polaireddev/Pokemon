@@ -32,7 +32,7 @@ if (isset($_REQUEST["evento"])) {
 
 
 
-<main >
+<main id="contenedor_listar">
     <div >
         <h1 class="h3">Buscar Pokemon</h1>
     </div>
@@ -63,8 +63,8 @@ if (isset($_REQUEST["evento"])) {
         </div>
         <?php if ($mostrarDatos): ?>
             <center>
-            <table >
-                <thead>
+            <table class="table-list table-light table-hover">
+                <thead class="table-dark">
                     <tr>
                         <th scope="col">Imagen</th>
                         <th scope="col">ID</th>
@@ -94,15 +94,15 @@ if (isset($_REQUEST["evento"])) {
                             <td><?= $pokemon->nivel ?></td>
                             <td><?= $pokemon->id_evolucion ?></td>
                             <td>
-                                <button ><a href="index.php?tabla=pokemon&accion=borrar&id=<?=$id?>">Borrar</a></button>
+                                <button class="btn-listar-borrar"><a href="index.php?tabla=pokemon&accion=borrar&id=<?=$id?>">Borrar</a></button>
                                 
                             </td>
                             <td>
-                                <button><a href="index.php?tabla=pokemon&accion=ver&id=<?=$id?>"> Ver</a></button>
+                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=ver&id=<?=$id?>"> Ver</a></button>
                         
                             </td>
                             <td>
-                                <button ><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Evolución</a></button>
+                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Evolución</a></button>
                             </td>
                         
                         </tr>
