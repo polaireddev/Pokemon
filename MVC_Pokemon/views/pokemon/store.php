@@ -60,6 +60,6 @@ if ($_REQUEST["evento"]=="crear"){
     }
 }
 
-/*if ($_REQUEST["evento"]=="modificar"){
-    $controlador->editar ($_REQUEST["id"],$arrayUser);
-}*/
+if ($_REQUEST["evento"]=="modificarEvolucion"){
+    $controlador->editarEvolucion ($_REQUEST["id"],$_REQUEST["idPokemonEvolucion"]);
+}

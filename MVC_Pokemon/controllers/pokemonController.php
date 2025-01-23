@@ -12,6 +12,11 @@ class pokemonController
         $this->model = new pokemonModel();
     }
 
+    public function ver(int $id): ?stdClass
+    {
+        return $this->model->read($id);
+    }
+
     public function devolverPokemonsLvl1()
     {
 
@@ -21,6 +26,13 @@ class pokemonController
     public function listar()
     {
         $pokemons = $this->model->readAll();
+        return $pokemons;
+    }
+
+    public function listarEvolucionesPosibles($id)
+    {
+        $pokemon = $this->model->read($id);
+        $pokemons = $this->model->listarEvolucionesPosiblesModel($pokemon->tipo, $pokemon->nivel);
         return $pokemons;
     }
 
@@ -76,5 +88,70 @@ class pokemonController
 
             return $id;
         }
+    }
+
+    public function editarEvolucion($id, $id_evolucion): void
+    {
+        $error = false;
+        $errores = [];
+        if (isset($_SESSION["errores"])) {
+            unset($_SESSION["errores"]);
+            unset($_SESSION["datos"]);
+        }
+
+
+
+        //campos NO VACIOS
+        /*$arrayNoNulos = ["password", "usuario"];
+    $nulos = HayNulos($arrayNoNulos, $arrayUser);
+    if (count($nulos) > 0) {
+        $error = true;
+        for ($i = 0; $i < count($nulos); $i++) {
+            $errores[$nulos[$i]][] = "El campo {$nulos[$i]} NO puede estar vacio ";
+        }
+    }
+    
+    //CAMPOS UNICOS
+    $arrayUnicos = [];
+    if ($arrayUser["usuario"] != $arrayUser["usuarioOriginal"]) $arrayUnicos[] = "usuario";
+
+    foreach ($arrayUnicos as $CampoUnico) {
+        if ($this->model->exists($CampoUnico, $arrayUser[$CampoUnico])) {
+            $errores[$CampoUnico][] = "El {$CampoUnico}  {$arrayUser[$CampoUnico]}  ya existe";
+            $error = true;
+        }
+    }*/
+
+
+
+        //todo correcto
+        $editado = false;
+        if (!$error) $editado = $this->model->editEvolution($id, $id_evolucion);
+
+        if ($editado == false) {
+            $_SESSION["errores"] = $errores;
+            //$_SESSION["datos"] = $arrayPokemon;
+            $redireccion = "location:index.php?accion=editar&tabla=pokemon&evento=modificarEvolucion&id={$id}&error=true";
+        } else {
+
+            unset($_SESSION["errores"]);
+            unset($_SESSION["datos"]);
+            $redireccion = "location:index.php?accion=listar&tabla=pokemon&id={$id}";
+        }
+        header($redireccion);
+        exit();
+    }
+
+    //METODO DE BUSCAR HAY QUE ADAPTARLO A POKEMON
+    public function buscar(string $campo, string $metodo = "contiene", string $texto = "", bool  $comprobarSiEsBorrable = false): array
+    {
+        $pokemons = $this->model->search($campo, $metodo, $texto);
+
+        /*if ($comprobarSiEsBorrable) {
+            foreach ($pokemons as $pokemon) {
+                $pokemon->esBorrable = $this->esBorrable($pokemon);
+            }
+        }*/
+        return $pokemons;
     }
 }

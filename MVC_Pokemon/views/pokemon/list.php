@@ -46,6 +46,7 @@ $visibilidad = "hidden";
                         <th scope="col">Evolucion</th>
                         <th scope="col">Eliminar</th>
                         <th scope="col">Ver</th>
+                        <th scope="col">Modificar Evolución</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,10 +63,13 @@ $visibilidad = "hidden";
                             <td><?= $pokemon->nivel ?></td>
                             <td><?= $pokemon->id_evolucion ?></td>
                             <td>
-                                <button class="btn-listar-borrar"><a href="index.php?tabla=user&accion=borrar&id=<?=$id?>">Borrar</a></button>
+                                <button class="btn-listar-borrar"><a href="index.php?tabla=pokemon&accion=borrar&id=<?=$id?>">Borrar</a></button>
                             </td>
                             <td>
-                                <button class="btn-listar-ver"><a href="index.php?tabla=user&accion=ver&id=<?=$id?>"> Ver</a></button>
+                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=ver&id=<?=$id?>"> Ver</a></button>
+                            </td>
+                            <td>
+                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Evolución</a></button>
                             </td>
                             <!--<td><a class="btn btn-success" href="index.php?tabla=user&accion=editar&id= //$id "><i class="fa fa-pencil"></i>Editar</a></td>-->
                         </tr>

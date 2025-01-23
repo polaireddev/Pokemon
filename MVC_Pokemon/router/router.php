@@ -42,16 +42,9 @@ function router (){
                 "ver"=> "show.php",
                 "listar"=>"list.php",
                 "borrar"=>"delete.php",
+                "modificarEvolucion"=>"modificarEvolucion.php"
                
         ],
-        
-
-        "task"=>[
-            "crear"=>"create.php",
-            "guardar"=>"store.php",
-            "editar"=>"edit.php",
-            "borrar"=>"delete.php"
-        ]
     ];
     $tabla= $_REQUEST["tabla"];
     if (!isset($tablas[$tabla])) return"views/404.php"; 
