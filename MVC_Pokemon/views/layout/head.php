@@ -7,6 +7,7 @@
   <title> AdminPokemon </title>
   <link rel="stylesheet" href="assets/css/indexStyles.css">
   <link rel="stylesheet" href="assets/css/listar.css">
+  <link rel="stylesheet" href="assets/css/create.css">
  </head>
 <body>
   <header class="header">
