@@ -20,6 +20,7 @@ body {
   letter-spacing: 5px;
   color: #f3f3f3;
   font-size: 30px;
+  
 }
 
 
@@ -79,6 +80,7 @@ body {
   flex-direction: row;
   background-color: #f8f9fa;
   border-radius: 8px;
+
   
   
 }
@@ -89,27 +91,28 @@ body {
   background-color: #f8f9fa;
   border-radius: 8px;
 }
-/*
- #contenedor_navbar{
-  border: 1px solid red;
- 
- }
-  */
 
-/* Estilo general */
-.position-sticky{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+ 
+  
+
+//* Estilo general */
+.position-sticky {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-#sidebarMenu{
-    border-bottom: 1px solid black;
-    background-color: #e6cc4a;
-    border-radius: 5px;
-    padding: 20px;
-    height: 100%;
-    
+#contenedor_navbar {
+  border: 1px solid red;
+  width: 20%;
+}
+
+#sidebarMenu {
+  border-bottom: 1px solid black;
+  background-color: #e6cc4a;
+  border-radius: 5px;
+  padding: 20px;
+  height: 100%;
 }
 
 .nav-item {
@@ -120,6 +123,7 @@ body {
 .nav-link {
   text-decoration: none;
   font-family: "PokemonSolid";
+  font-size: 25px;
   padding: 10px 15px;
   display: block;
   color: #222222;
@@ -132,16 +136,22 @@ body {
 /* Estilo del menú desplegable */
 .dropdown-menu {
   list-style: none;
-  padding: 0;
+  padding: 20px;
   margin: 0;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 50px;
+  left: 160px;
   background-color: #fff;
   border: 1px solid #ccc;
-  display: none; /* Oculta el menú por defecto */
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
+  /* Inicialmente oculto, con opacidad y visibilidad */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .dropdown-menu li {
@@ -153,6 +163,11 @@ body {
   display: block;
   text-decoration: none;
   color: #333;
+  font-size: 25px;
+}
+
+.dropdown-toggle {
+  padding: 30px;
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -162,8 +177,13 @@ body {
 
 /* Mostrar el menú al pasar el ratón por el contenedor */
 .nav-item:hover .dropdown-menu {
-  display: block;
+  opacity: 1; /* Aparece */
+  visibility: visible; /* Se vuelve visible */
+  transform: translateY(0); /* Se mueve a la posición final */
 }
+
+
+
 
 /*Footer*/
 

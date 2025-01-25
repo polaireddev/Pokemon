@@ -37,20 +37,20 @@ $pokemons = $pokemonControl->listar();
         <form id="formCreatePokemon" action="index.php?tabla=pokemon&accion=guardar&evento=crear" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="nombre">Nombre </label>
-                <input type="text" required class="form-control" id="nombre" name="nombre" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre" placeholder="Introduce nombre">
-                <?= isset($errores["nombre"]) ? '<div id="nombre-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "usuario") . '</div>' : ""; ?>
-            </div>
+                <input type="text"  class="form-control" id="nombre" name="nombre" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre" placeholder="Introduce nombre">
+                <?= isset($errores["nombre"]) ? '<div id="nombre-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "nombre") . '</div>' : ""; ?>
+</div>
 
             <div class="form-group">
                 <label for="ataque">Ataque</label>
-                <input type="number" required class="form-control" id="ataque" name="ataque" value="<?= $_SESSION["datos"]["ataque"] ?? "" ?>" placeholder="Ataque">
+                <input type="number"  class="form-control" id="ataque" name="ataque" value="<?= $_SESSION["datos"]["ataque"] ?? "" ?>" placeholder="Ataque">
                 <?= isset($errores["ataque"]) ? '<div id="usuario-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "ataque") . '</div>' : ""; ?>
             </div>
 
             <div>
                 <label for="defensa">Defensa </label>
-                <input type="number" required class="form-control" id="defensa" name="defensa" value="<?= $_SESSION["datos"]["defensa"] ?? "" ?>" aria-describedby="defensa" placeholder="Defensa">
-                <?= isset($errores["defensa"]) ? '<div id="defensa-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "usuario") . '</div>' : ""; ?>
+                <input type="number"  class="form-control" id="defensa" name="defensa" value="<?= $_SESSION["datos"]["defensa"] ?? "" ?>" aria-describedby="defensa" placeholder="Defensa">
+                <?= isset($errores["defensa"]) ? '<div id="defensa-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "defensa") . '</div>' : ""; ?>
             </div>
 
             <div>
@@ -82,16 +82,19 @@ $pokemons = $pokemonControl->listar();
             <div>
                 <label>Imagen por defecto:</label>
                 <input type="file" name="file1" accept=".gif">
+                <?= isset($errores["file1"]) ? '<div id="file1-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "file1") . '</div>' : ""; ?>
             </div>
 
             <div>
                 <label>Imagen de derrota:</label>
                 <input type="file" name="file2" accept=".gif">
+                <?= isset($errores["file2"]) ? '<div id="file2-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "file2") . '</div>' : ""; ?>
             </div>
 
             <div>
                 <label>Imagen de victoria:</label>
                 <input type="file" name="file3" accept=".gif">
+                <?= isset($errores["file3"]) ? '<div id="file3-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "file3") . '</div>' : ""; ?>
             </div>
 
             <div>

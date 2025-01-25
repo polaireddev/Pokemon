@@ -1,6 +1,7 @@
 <?php
 require_once "models/pokemonModel.php";
 require_once "controllers/equipoController.php";
+require_once "assets/php/funciones.php";
 
 
 class pokemonController
@@ -47,8 +48,7 @@ class pokemonController
         $error = false;
         $errores = [];
 
-        /*
-        //vaciamos los posibles errores
+       
         $_SESSION["errores"] = [];
         $_SESSION["datos"] = [];
 
@@ -72,12 +72,12 @@ class pokemonController
             }
         }
 
-        //PATRON DE USUARIO (LETRAS Y NUMEROS)
-        if (!validarUsuario($arrayPokemon["nombre"])) {
+        //PATRON DE POKEMON
+        if (!validarPokemon($arrayPokemon["nombre"])) {
             $errores["nombre"][] = "Carácteres del nombre incorrectos";
             $error = true;
         }
-*/
+
         $id = null;
         if (!$error) {
             $id = $this->model->insert($arrayPokemon);
@@ -104,31 +104,6 @@ class pokemonController
             unset($_SESSION["errores"]);
             unset($_SESSION["datos"]);
         }
-
-
-
-        //campos NO VACIOS
-        /*$arrayNoNulos = ["password", "usuario"];
-    $nulos = HayNulos($arrayNoNulos, $arrayUser);
-    if (count($nulos) > 0) {
-        $error = true;
-        for ($i = 0; $i < count($nulos); $i++) {
-            $errores[$nulos[$i]][] = "El campo {$nulos[$i]} NO puede estar vacio ";
-        }
-    }
-    
-    //CAMPOS UNICOS
-    $arrayUnicos = [];
-    if ($arrayUser["usuario"] != $arrayUser["usuarioOriginal"]) $arrayUnicos[] = "usuario";
-
-    foreach ($arrayUnicos as $CampoUnico) {
-        if ($this->model->exists($CampoUnico, $arrayUser[$CampoUnico])) {
-            $errores[$CampoUnico][] = "El {$CampoUnico}  {$arrayUser[$CampoUnico]}  ya existe";
-            $error = true;
-        }
-    }*/
-
-
 
         //todo correcto
         $editado = false;
@@ -174,6 +149,10 @@ class pokemonController
             $redireccion.="&error=true";
             header($redireccion);
         exit();
+        }
+        else{
+            header("location:index.php?accion=listar&tabla=pokemon&evento=borrar&id={$id}&nombre={$pokemon->nombre}");
+            exit();
         }
         
     

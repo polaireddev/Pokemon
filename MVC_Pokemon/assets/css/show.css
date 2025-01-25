@@ -1,0 +1,71 @@
+/* Estilo para el contenedor principal de la ficha del Pokémon */
+#contentShow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#fichaPokemon {
+    width: 100%;
+    max-width: 800px;  /* Limita el tamaño máximo de la tarjeta */
+    margin: 20px auto;  /* Centra el contenedor */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+#fichaPokemon h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la imagen */
+#fichaPokemon img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid #ddd; /* Borde alrededor de la imagen */
+}
+
+/* Estilo para el bloque de texto del Pokémon */
+#fichaPokemon p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la evolución (si existe) */
+#fichaPokemonEvolucion {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Enlace para volver al listado */
+#fichaPokemon a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#fichaPokemon a:hover {
+    background-color: #45a049;
+}
+

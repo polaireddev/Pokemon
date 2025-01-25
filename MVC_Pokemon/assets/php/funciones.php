@@ -9,9 +9,6 @@ function validarUsuario($usuario):bool{
         return true;
     }
     return false;
-
-
-
 }
 
 function validarPassword(string $password){
@@ -22,6 +19,16 @@ function validarPassword(string $password){
     return false;
 }
 
+
+
+function validarPokemon($pokemon):bool{
+    $patron ="/^[A-Za-zÁÉÍÓÚáéíóúñÑ]+$/";
+
+    if(preg_match($patron, $pokemon)){
+        return true;
+    }
+    return false;
+}
 
 
 

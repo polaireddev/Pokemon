@@ -6,6 +6,9 @@ $pokemons = $controlador->listar(comprobarSiEsBorrable: true);
 $visibilidad = "hidden";
 ?>
 <div  id="contenedor_main">
+
+
+
     <main id="contenedor_listar">
     <div>
         <h1 class="h3">Listar Pokemons</h1>
@@ -21,18 +24,21 @@ $visibilidad = "hidden";
                 $visibilidad = "visible";
                 $clase = "alert alert-success";
                 //Mejorar y poner el nombre/usuario
-                $mensaje = "El pokemon con id: {$_REQUEST['id']}, con nombre: {$_REQUEST["nombre"]}, usuario:{$_REQUEST['usuario']} Borrado correctamente";
+                $mensaje = "El pokemon con id: {$_REQUEST['id']}, con nombre: {$_REQUEST["nombre"]}Borrado correctamente";
 
                 if (isset($_REQUEST["error"])) {
                     $clase = "alert alert-danger ";
-                    $mensaje = "ERROR!!! No se ha podido borrar el pokemon con id: {$_REQUEST['id']}, con nombre: {$_REQUEST["nombre"]}, pokemon:{$_REQUEST['usuario']} Borrado correctamente";
+                    $mensaje = "ERROR!!! No se ha podido borrar el pokemon con id: {$_REQUEST['id']}, con nombre: {$_REQUEST["nombre"]}  Borrado correctamente";
                 }
             }
             ?>
+
             <div class="<?= $clase ?>" <?= $visibilidad ?> role="alert">
                 <?= $mensaje ?>
             </div>
-            <center>
+
+            
+            
             <table class="table-list table-light table-hover">
                 <thead class="table-dark">
                     <tr>
@@ -78,10 +84,10 @@ $visibilidad = "hidden";
                                 <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=ver&id=<?=$id?>"> Ver</a></button>
                             </td>
                             <td>
-                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Evolución</a></button>
+                                <button class="btn-option"><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Evolución</a></button>
                             </td>
                             <td>
-                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarImagenes&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Imagenes</a></button>
+                                <button class="btn-option"><a href="index.php?tabla=pokemon&accion=modificarImagenes&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Imagenes</a></button>
                             </td>
                             <!--<td><a class="btn btn-success" href="index.php?tabla=user&accion=editar&id= //$id "><i class="fa fa-pencil"></i>Editar</a></td>-->
                         </tr>
@@ -92,14 +98,14 @@ $visibilidad = "hidden";
                 </tbody>
             </table>
                 
-            </center>
+            
             
             <?php
         endif;
         ?>
-        </div>
-    
     </div>
+    
+</div>
 
 </main>
 

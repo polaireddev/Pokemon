@@ -17,7 +17,7 @@ $user = $controlador->ver($id);
     </div>
     <div id="contenido">
         <div>
-            <div >
+            <div>
                 <h5>ID: <?= $user->id ?></h5>
                 <p>
                     Nick: <?= $user->usuario ?> <br>

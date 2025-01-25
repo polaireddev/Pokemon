@@ -1,9 +1,125 @@
 #contenedor_main{
     width: 100%;
     margin: 0 auto;
-    border: 1px solid red;
     display: flex;
-    justify-content: center;
-
-
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
   }
+
+
+
+.alert-danger {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f8d7da; /* Fondo rojo suave */
+  border: 1px solid #f5c6cb; /* Borde rojo más claro */
+  color: #721c24; /* Texto rojo oscuro */
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+
+
+
+
+
+
+/* Estilos para el formulario */
+#contenido_form {
+ 
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Estilo para el título */
+#titulo_pokemon, #titulo_usuario {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#titulo_pokemon h1, #titulo_usuario h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+/* Estilo de los campos de formulario (inputs y selects) */
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form select,
+form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+/* Estilo para las etiquetas */
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Botón de guardar */
+form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Enlace "Listar" */
+form a {
+  text-decoration: none;
+  background-color: #ccc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1.1em;
+  color: black;
+  display: inline-block;
+}
+
+form a:hover {
+  background-color: #b5b5b5;
+}
+
+/* Estilos para los mensajes de error (alert-danger ya está definida) */
+form .alert {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+
+/* Estilo para el campo de imagen (input[type="file"]) */
+form input[type="file"] {
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+/* Espaciado adicional para las imágenes */
+form div {
+  margin-bottom: 20px;
+}
+
+
