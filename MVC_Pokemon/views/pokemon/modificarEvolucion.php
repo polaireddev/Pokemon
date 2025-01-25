@@ -11,18 +11,7 @@ $pokemons = $pokemonControlador->listarEvolucionesPosibles($pokemonModificarId);
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
+<main id="mainModificarEvolucion">
 
     <h1>Evoluciones para: <?= $_REQUEST["nombre"] ?></h1>
 
@@ -41,13 +30,12 @@ $pokemons = $pokemonControlador->listarEvolucionesPosibles($pokemonModificarId);
                 
                 endforeach; ?>
             </select>
-            <?= isset($errores["tipo"]) ? '<div id="tipo-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "tipo") . '</div>' : ""; ?>
         </div>
          <input type="submit" value="Enviar">
 
     </form>
+    <a href="index.php?tabla=pokemon&accion=listar">Volver</a>
 
 
-</body>
+</main>
 
-</html>

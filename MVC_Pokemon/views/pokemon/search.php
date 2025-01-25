@@ -37,9 +37,11 @@ if (isset($_REQUEST["evento"])) {
         <h1 class="h3">Buscar Pokemon</h1>
     </div>
     <div id="contenido">
+        <?php if($mensaje != ""){ ?>
         <div class="<?= $clase ?>" <?= $visibilidad ?> role="alert">
             <?= $mensaje ?>
         </div>
+        <?php }  ?>
         <div>
             <form action="index.php?tabla=pokemon&accion=buscar&evento=filtrar" method="POST">
                 <div class="form-group">

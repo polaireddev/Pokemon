@@ -1,0 +1,122 @@
+/* Contenedor principal */
+#mainModificarImagenes {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Título principal */
+#mainModificarImagenes > h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#mainModificarImagenes > #imagenesActuales{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Contenedor de imágenes */
+#mainModificarImagenes > #imagenesActuales > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding-right: 60px;
+}
+
+/* Texto de descripción de cada imagen */
+#mainModificarImagenes > #imagenesActuales > div > p {
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+    margin: 0 10px;
+    padding-bottom: 10px;
+}
+
+/* Imágenes */
+#mainModificarImagenes >  #imagenesActuales > div > img {
+    width: 120px; /* Tamaño fijo para las imágenes */
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Estilo del formulario */
+#mainModificarImagenes > form {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Estilo para los campos del formulario */
+#mainModificarImagenes > form > div {
+    margin-bottom: 20px;
+}
+
+/* Etiquetas del formulario */
+#mainModificarImagenes > form > div > label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Inputs de archivo */
+#mainModificarImagenes > form > div > input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Botón de guardar */
+#mainModificarImagenes > form > div > input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+#mainModificarImagenes > form > div > input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Enlace de listar */
+#mainModificarImagenes > form > div > a {
+    text-decoration: none;
+    background-color: #ccc;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    color: black;
+    display: inline-block;
+}
+
+#mainModificarImagenes > form > div > a:hover {
+    background-color: #b5b5b5;
+}

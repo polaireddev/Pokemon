@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="assets/css/listar.css">
   <link rel="stylesheet" href="assets/css/create.css">
   <link rel="stylesheet" href="assets/css/show.css">
+  <link rel="stylesheet" href="assets/css/modificarImagenes.css">
+  <link rel="stylesheet" href="assets/css/modificarEvolucion.css">
  </head>
 <body>
   <header class="header">

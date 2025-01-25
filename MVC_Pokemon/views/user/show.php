@@ -11,23 +11,22 @@ $id = $_REQUEST['id'];
 $controlador = new usersController();
 $user = $controlador->ver($id);
 ?>
-<main>
-    <div>
-        <h1 class="h3">Ver Usuario</h1>
-    </div>
-    <div id="contenido">
+<main id="mainShowUsuario">
+    
+        <h1>Ver Usuario</h1>
+    
+    <div id="contenidoShowUsuario">
         <div>
-            <div>
-                <h5>ID: <?= $user->id ?></h5>
-                <p>
-                    Nick: <?= $user->usuario ?> <br>
-                    Partidas Ganadas: <?= $user->partidas_ganadas ?><br>
-                    Partidas Perdidas: <?= $user->partidas_perdidas ?><br>
-                    Partidas Jugadas: <?= $user->partidas_jugadas ?><br>
-                    Evoluciones Disponibles: <?= $user->evoluciones_disponibles ?><br>
-                    Administrador: <?= $user->administrador ?><br>
-                </p>
-                <a href="index.php?tabla=user&accion=listar">Volver a Inicio</a>
-            </div>
+            <h5>ID: <?= $user->id ?></h5>
+            <p>
+                Nick: <?= $user->usuario ?> <br>
+                Partidas Ganadas: <?= $user->partidas_ganadas ?><br>
+                Partidas Perdidas: <?= $user->partidas_perdidas ?><br>
+                Partidas Jugadas: <?= $user->partidas_jugadas ?><br>
+                Evoluciones Disponibles: <?= $user->evoluciones_disponibles ?><br>
+                Administrador: <?= $user->administrador ?><br>
+            </p>
+            <a href="index.php?tabla=user&accion=listar">Volver a Inicio</a>
         </div>
+    </div>
 </main>

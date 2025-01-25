@@ -9,38 +9,30 @@ $pokemon = $pokemonControlador->ver($_REQUEST["id"]);
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
+<main id="mainModificarImagenes">
 
+    <h1>Imagenes Actuales de: <?= $_REQUEST["nombre"] ?></h1>
 
+    <div id="imagenesActuales">
+        <div>
+            <p>Normal</p>
+            <img src=<?= $pokemon->imagen . "/" . $pokemon->nombre . ".gif" ?> alt="">
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+        <div>
+            <p>Derrota</p>
+            <img src=<?= $pokemon->imagen . "/" . $pokemon->nombre . "_R.gif" ?> alt="">
+        </div>
 
-<body>
+        <div>
+            <p>Victoria</p>
+            <img src=<?= $pokemon->imagen . "/" . $pokemon->nombre . "_V.gif" ?> alt="">
+        </div>
 
-    <h1>Imagenes de: <?= $_REQUEST["nombre"] ?></h1>
-
-    <div>
-        <p>Imagen Actual por Defecto</p>
-        <img src=<?= $pokemon->imagen . "/" . $pokemon->nombre . ".gif" ?> alt="">
-    </div>
-
-    <div>
-        <p>Imagen Actual de Derrota</p>
-        <img src=<?= $pokemon->imagen . "/" . $pokemon->nombre . "_R.gif" ?> alt="">
-    </div>
-
-    <div>
-        <p>Imagen Actual de Victoria</p>
-        <img src=<?= $pokemon->imagen . "/" . $pokemon->nombre . "_V.gif" ?> alt="">
     </div>
 
     <form
-        action="index.php?tabla=pokemon&accion=guardar&evento=modificarImagenes&nombre=<?=$_REQUEST["nombre"]?>&id=<?= $pokemon->id?>"
+        action="index.php?tabla=pokemon&accion=guardar&evento=modificarImagenes&nombre=<?= $_REQUEST["nombre"] ?>&id=<?= $pokemon->id ?>"
         method="post" enctype="multipart/form-data">
 
         <div>
@@ -64,12 +56,9 @@ $pokemon = $pokemonControlador->ver($_REQUEST["id"]);
 
         <div>
             <input type="submit" value="Guardar">
-            <a href="index.php">Listar</a>
+            <a href="index.php?tabla=pokemon&accion=listar">Listar</a>
         </div>
 
     </form>
 
-
-</body>
-
-</html>
+</main>

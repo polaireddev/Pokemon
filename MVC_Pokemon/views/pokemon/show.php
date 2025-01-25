@@ -35,12 +35,15 @@ if ($pokemon->id_evolucion != null) {
                     Nivel: <?= $pokemon->nivel ?><br>
                 </p>
             </div>
+        </div>
 
-
+        
             <?php if ($pokemonEvoluciona != null): ?>
-
-
+                <div class="flecha">
+                    ⇒
+                </div>
                 <div id="fichaPokemonEvolucion">
+                    <h5>ID: <?= $pokemonEvoluciona->id ?></h5>
                     <img src="<?= $pokemonEvoluciona->imagen ?>/<?= $pokemonEvoluciona->nombre ?>.gif" alt="">
                     <p>
                         Nombre: <?= $pokemonEvoluciona->nombre ?> <br>
@@ -53,7 +56,8 @@ if ($pokemon->id_evolucion != null) {
                 </div>
             <?php endif ?>
 
-            <a href="index.php?tabla=pokemon&accion=listar">Volver a Inicio</a>
         </div>
+        <a href="index.php?tabla=pokemon&accion=listar">Volver a Inicio</a>
+        
     </div>
 </main>
