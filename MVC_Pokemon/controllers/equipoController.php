@@ -20,4 +20,14 @@ class equipoController{
 
     }
 
+    public function buscar(string $campo, string $metodo = "contiene", string $texto = "", bool  $comprobarSiEsBorrable = false): array
+    {
+        $pokemons = $this->model->search($campo, $metodo, $texto);
+
+        return $pokemons;
+    }
+
+
+    
+
 }

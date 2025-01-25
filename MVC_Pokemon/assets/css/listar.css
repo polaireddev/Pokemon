@@ -150,3 +150,21 @@
   table tr:last-child td:last-child {
     border-bottom-right-radius: 10px; /* Redondear la esquina inferior derecha de la tabla */
   }
+
+
+
+
+
+  /* Estilo para los botones deshabilitados */
+button[disabled], button.disabled {
+  pointer-events: none;   /* Deshabilita la interactividad del botón */
+  
+  background-color: #ce7575; /* Cambia el color de fondo a uno gris */
+
+}
+
+/* Estilo para el enlace deshabilitado */
+button[disabled] a, button.disabled a {
+  pointer-events: none;   /* Deshabilita los clics en el enlace */
+      color: rgb(187, 187, 187);  /* Cambia el color del texto a gris */
+}

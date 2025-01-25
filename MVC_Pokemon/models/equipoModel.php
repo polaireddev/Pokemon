@@ -35,4 +35,34 @@ class equipoModel{
     }
 
     }
+
+
+    public function search(string $campo = "id", string $metodo = "contiene", string $dato = ""): array
+    {
+        $sql= "SELECT * FROM equipo_usuario WHERE $campo LIKE :dato ;";
+        $sentencia = $this->conexion->prepare($sql);
+
+        switch ($metodo) {
+            case "contiene":
+                $arrayDatos = [":dato" => "%$dato%"];
+                break;
+            case "empiezaPor":
+                $arrayDatos = [":dato" => "$dato%"];
+                break;
+            case "acabaEn":
+                $arrayDatos = [":dato" => "%$dato"];
+                break;
+            case "igualA":
+                $arrayDatos = [":dato" => "$dato"];
+                break;
+            default:
+                $arrayDatos = [":dato" => "%$dato%"];
+                break;
+        }
+
+        $resultado = $sentencia->execute($arrayDatos);
+        if (!$resultado) return [];
+        $projects = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $projects;
+    }
 }

@@ -2,7 +2,7 @@
 require_once "controllers/pokemonController.php";
 
 $controlador = new PokemonController();
-$pokemons = $controlador->listar();
+$pokemons = $controlador->listar(comprobarSiEsBorrable: true);
 $visibilidad = "hidden";
 ?>
 <div  id="contenedor_main">
@@ -64,7 +64,15 @@ $visibilidad = "hidden";
                             <td><?= $pokemon->nivel ?></td>
                             <td><?= $pokemon->id_evolucion ?></td>
                             <td>
-                                <button class="btn-listar-borrar"><a href="index.php?tabla=pokemon&accion=borrar&id=<?=$id?>">Borrar</a></button>
+                            <?php
+                                $disable = "";
+                                $ruta = "index.php?tabla=pokemon&accion=borrar&id={$id}";
+                                if (isset($pokemon->esBorrable) && $pokemon->esBorrable == false) {
+                                    $disable = "disabled";
+                                    $ruta = "#";
+                                }
+                                ?>
+                                <button class="btn-listar-borrar <?= $disable ?>"><a href="<?= $ruta ?>">Borrar</a></button>
                             </td>
                             <td>
                                 <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=ver&id=<?=$id?>"> Ver</a></button>

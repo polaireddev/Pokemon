@@ -1,5 +1,6 @@
 <?php
 require_once "models/pokemonModel.php";
+require_once "controllers/equipoController.php";
 
 
 class pokemonController
@@ -23,9 +24,14 @@ class pokemonController
         return $this->model->devolverPokemonsLvl1Model();
     }
 
-    public function listar()
+    public function listar($comprobarSiEsBorrable = false)
     {
         $pokemons = $this->model->readAll();
+        if ($comprobarSiEsBorrable) {
+            foreach ($pokemons as $pokemon) {
+                $pokemon->esBorrable = $this->esBorrable($pokemon); //le vamos pasando 1x1 todos los usurio para verificar si estan marcados como true
+            }
+        }
         return $pokemons;
     }
 
@@ -147,11 +153,50 @@ class pokemonController
     {
         $pokemons = $this->model->search($campo, $metodo, $texto);
 
-        /*if ($comprobarSiEsBorrable) {
+        if ($comprobarSiEsBorrable) {
             foreach ($pokemons as $pokemon) {
                 $pokemon->esBorrable = $this->esBorrable($pokemon);
             }
-        }*/
+        }
         return $pokemons;
     }
+
+
+    public function borrar(int $id):void{
+
+        //parametros para deshabilitar boton 
+        $pokemon= $this->ver($id);
+        $borrado= $this->model->delete($id); 
+
+
+        $redireccion= "location:index.php?accion=listar&tabla=pokemon&evento=borrar&id={$id}&nombre={$pokemon->nombre}"; //datos para confirmar eldelete
+        if($borrado==false){
+            $redireccion.="&error=true";
+            header($redireccion);
+        exit();
+        }
+        
+    
+    }
+
+    private function esBorrable(stdClass $pokemon): bool //le pasamos como paraemtro el usuario q queremos verificar
+    {
+        $borrable = true;
+        $equipoPokemon = new equipoController();
+        
+        // si ese usuario está en algún proyecto, No se puede borrar.
+        if (count($this->buscar("id_evolucion", "igualA", $pokemon->id)) > 0) 
+            $borrable = false; //aqui marcamos si es borrable como falso o no
+
+        if (count($equipoPokemon->buscar("pokemon_id", "igualA", $pokemon->id)) > 0) 
+            $borrable = false; //aqui marcamos si es borrable como falso o no
+
+        return $borrable;
+    }
+
+
+    
+    
 }
+
+

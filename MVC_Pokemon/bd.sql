@@ -91,6 +91,8 @@ INSERT INTO pokemon (nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen)
 ("krookodile", 16, 17, "Tierra", 3, NULL, "assets/pokemons/krookodile"),#28
 ("krokorok", 16, 17, "Tierra", 2, 28, "assets/pokemons/krokorok"),		#29
 ("sandile", 16, 17, "Tierra", 1, 29, "assets/pokemons/sandile");		#30
+("ratata", 16, 17, "Normal", 1, NULL, "assets/pokemons/ratata");  #31
+
 
 
 INSERT INTO users (usuario, password, partidas_ganadas, partidas_jugadas, partidas_perdidas, evoluciones_disponibles, imagen, administrador)
@@ -115,4 +117,10 @@ VALUES
 ('Usuario18', 'password18', 1, 8, 7, 2, 'imagen18.png', FALSE),
 ('Usuario19', 'password19', 13, 19, 6, 4, 'imagen19.png', FALSE),
 ('Usuario20', 'password20', 4, 10, 6, 3, 'imagen20.png', FALSE);
+
+
+INSERT INTO equipo_usuario(usuario_id, pokemon_id)
+VALUES (2, 6);
+INSERT INTO equipo_usuario(usuario_id, pokemon_id)
+VALUES (3, 18);
 
