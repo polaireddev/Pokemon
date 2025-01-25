@@ -77,6 +77,7 @@ if (isset($_REQUEST["evento"])) {
                         <th scope="col">Eliminar</th>
                         <th scope="col">Ver</th>
                         <th scope="col">Modificar Evolución</th>
+                        <th scope="col">Modificar Imagenes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,7 +105,9 @@ if (isset($_REQUEST["evento"])) {
                             <td>
                                 <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Evolución</a></button>
                             </td>
-                        
+                            <td>
+                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarImagenes&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Imagenes</a></button>
+                            </td>
                         </tr>
                         <?php
                     endforeach;

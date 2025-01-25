@@ -62,4 +62,39 @@ if ($_REQUEST["evento"]=="crear"){
 
 if ($_REQUEST["evento"]=="modificarEvolucion"){
     $controlador->editarEvolucion ($_REQUEST["id"],$_REQUEST["idPokemonEvolucion"]);
+    
+}
+
+if ($_REQUEST["evento"]=="modificarImagenes"){
+    $pokemon = $controlador->ver($_REQUEST["id"]);
+    
+    //Guardamos la foto1
+    $temporal1 = $_FILES["file1"]["tmp_name"];
+    $destino = $pokemon->imagen."/".$pokemon->nombre.".gif";
+    if (move_uploaded_file($temporal1, $destino)) {
+        echo "Archivo subido con éxito";
+    } else {
+        echo "Ocurrió un error, no se ha podido subir el archivo";
+    }
+
+    //Guardamos la foto2
+    $temporal2 = $_FILES["file2"]["tmp_name"];
+    $destino = $pokemon->imagen."/".$pokemon->nombre."_R.gif";
+    if (move_uploaded_file($temporal2, $destino)) {
+        echo "Archivo subido con éxito";
+    } else {
+        echo "Ocurrió un error, no se ha podido subir el archivo";
+    }
+
+    //Guardamos la foto3
+    $temporal3 = $_FILES["file3"]["tmp_name"];
+    $destino = $pokemon->imagen."/".$pokemon->nombre."_V.gif";
+    if (move_uploaded_file($temporal3, $destino)) {
+        echo "Archivo subido con éxito";
+    } else {
+        echo "Ocurrió un error, no se ha podido subir el archivo";
+    }
+
+    header("location:index.php?tabla=pokemon&accion=ver&id={$id}");
+    exit();
 }

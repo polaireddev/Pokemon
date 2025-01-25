@@ -47,6 +47,7 @@ $visibilidad = "hidden";
                         <th scope="col">Eliminar</th>
                         <th scope="col">Ver</th>
                         <th scope="col">Modificar Evolución</th>
+                        <th scope="col">Modificar Imagenes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,6 +71,9 @@ $visibilidad = "hidden";
                             </td>
                             <td>
                                 <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarEvolucion&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Evolución</a></button>
+                            </td>
+                            <td>
+                                <button class="btn-listar-ver"><a href="index.php?tabla=pokemon&accion=modificarImagenes&id=<?=$id?>&nombre=<?=$pokemon->nombre?>">Modificar Imagenes</a></button>
                             </td>
                             <!--<td><a class="btn btn-success" href="index.php?tabla=user&accion=editar&id= //$id "><i class="fa fa-pencil"></i>Editar</a></td>-->
                         </tr>

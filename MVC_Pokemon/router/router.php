@@ -42,7 +42,8 @@ function router (){
                 "ver"=> "show.php",
                 "listar"=>"list.php",
                 "borrar"=>"delete.php",
-                "modificarEvolucion"=>"modificarEvolucion.php"
+                "modificarEvolucion"=>"modificarEvolucion.php",
+                "modificarImagenes"=>"modificarImagenes.php"
                
         ],
     ];
