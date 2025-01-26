@@ -153,11 +153,11 @@ form div {
   letter-spacing: 2px;
   position: relative; /* Necesario para el pseudo-elemento */
   padding: 20px;
-  background: linear-gradient(45deg, #fad628, #84c3d6, #30824b); /* Colores Pokémon */
+  background-image: url(../img/backgPokemon.jpg);
   background-size: 400% 400%; /* Hace que el gradiente sea más grande y animado */
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto en WebKit browsers */
   background-clip: text; /* Aplica el gradiente solo al texto */
-  animation: moverFondo 2s ease infinite; /* Animación para mover el fondo */
+  animation: moverFondo 20s ease infinite; /* Animación para mover el fondo */
 }
 
 /* Animación para mover el fondo */
