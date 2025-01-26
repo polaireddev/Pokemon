@@ -18,7 +18,7 @@ if ($pokemon->id_evolucion != null) {
 ?>
 <main id="mainShow">
     <div>
-        <h1 class="h3">Ver Pokemon</h1>
+        <h1 class="titulo">Ver Pokemon</h1>
     </div>
     <div id="contenidoShow">
 

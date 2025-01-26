@@ -11,7 +11,7 @@ $visibilidad = "hidden";
 
     <main id="contenedor_listar">
     <div>
-        <h1 class="h3">Listar Pokemons</h1>
+        <h1 class="titulo">Listar Pokemons</h1>
     </div>
     <div id="contenido">
         <?php

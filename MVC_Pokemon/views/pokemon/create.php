@@ -30,7 +30,7 @@ $pokemons = $pokemonControl->listar();
 
 <main id="contenedor_main">
     <div id="titulo_pokemon">
-        <h1 class="h3">Añadir Pokemon</h1>
+        <h1 class="titulo">Añadir Pokemon</h1>
     </div>
     <div id="contenido_form">
         <div><?= $cadena ?></div>

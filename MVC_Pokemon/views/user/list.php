@@ -8,7 +8,7 @@ $visibilidad = "hidden";
 <div  id="contenedor_main">
     <main id="contenedor_listar">
     <div>
-        <h1 class="h3">Listar usuario</h1>
+        <h1 class="titulo">Listar usuario</h1>
     </div>
     <div id="contenido">
         <?php
@@ -41,7 +41,6 @@ $visibilidad = "hidden";
                         <th scope="col">Partidas Jugadas</th>
                         <th scope="col">Partidas Ganadas</th>
                         <th scope="col">Partidas Perdidas</th>
-                        <th scope="col">Eliminar</th>
                         <th scope="col">Ver</th>
                     </tr>
                 </thead>
@@ -55,9 +54,6 @@ $visibilidad = "hidden";
                             <td><?= $user->partidas_jugadas ?></td>
                             <td><?= $user->partidas_ganadas ?></td>
                             <td><?= $user->partidas_perdidas ?></td>
-                            <td>
-                                <button class="btn-listar-borrar"><a href="index.php?tabla=user&accion=borrar&id=<?=$id?>">Borrar</a></button>
-                            </td>
                             <td>
                                 <button class="btn-listar-ver"><a href="index.php?tabla=user&accion=ver&id=<?=$id?>"> Ver</a></button>
                             </td>

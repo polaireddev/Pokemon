@@ -14,7 +14,7 @@ if (isset($_REQUEST["error"])) {
 ?>
 <main id="contenedor_main">
 <div id="titulo_usuario">
-    <h1 class="h3">Añadir usuario</h1>
+    <h1 class="titulo">Añadir usuario</h1>
 </div>
 <div id="contenido_form">
     <div><?= $cadena ?></div>
@@ -30,7 +30,7 @@ if (isset($_REQUEST["error"])) {
         <?= isset($errores["password"]) ? '<div  id="usuario-error" class="alert alert-danger" role="alert">' . DibujarErrores($errores, "password") . '</div>' : ""; ?>
     </div>
     <button type="submit">Guardar</button>
-    <a href="index.php">Listar</a>
+    <a href="index.php?tabla=user&accion=listar">Listar</a>
     </form>
     
     <?php

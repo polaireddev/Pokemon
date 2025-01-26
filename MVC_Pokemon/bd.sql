@@ -38,7 +38,7 @@ pokemon_id 	INT,
 created_at 	DATETIME DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY(usuario_id, pokemon_id),
 CONSTRAINT usuario_id FOREIGN KEY (`usuario_id`) REFERENCES users (`id`) ON UPDATE CASCADE,
-CONSTRAINT pokemon_id FOREIGN KEY (`pokemon_id`) REFERENCES pokemon (`id`) ON UPDATE CASCADE
+CONSTRAINT pokemon_id FOREIGN KEY (`pokemon_id`) REFERENCES pokemon (`id`) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE equipo_usuario(

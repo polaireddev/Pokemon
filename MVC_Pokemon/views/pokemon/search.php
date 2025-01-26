@@ -34,7 +34,7 @@ if (isset($_REQUEST["evento"])) {
 
 <main id="contenedor_listar">
     <div >
-        <h1 class="h3">Buscar Pokemon</h1>
+        <h1 class="titulo">Buscar Pokemon</h1>
     </div>
     <div id="contenido">
         <?php if($mensaje != ""){ ?>

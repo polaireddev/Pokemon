@@ -5,10 +5,14 @@
     flex-direction: column;
     align-items: center;
     padding: 50px;
+    background-color: white;
   }
 
 
-
+h1{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 .alert-danger {
   padding: 10px;
   margin-top: 10px;
@@ -29,13 +33,13 @@
 
 /* Estilos para el formulario */
 #contenido_form {
- 
   width: 100%;
   max-width: 600px;
-  background-color: white;
-  padding: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  border: 1px solid #e0e0e0; 
 }
 
 /* Estilo para el título */
@@ -46,7 +50,7 @@
 
 #titulo_pokemon h1, #titulo_usuario h1 {
   font-size: 2em;
-  color: #333;
+  /* color: #333333; */
 }
 
 /* Estilo de los campos de formulario (inputs y selects) */
@@ -56,13 +60,22 @@ form input[type="password"],
 form select,
 form input[type="file"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px 15px; 
   margin-top: 5px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1em;
   box-sizing: border-box;
+  background-color: #fafafa; 
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+  border-color: #4CAF50; /* Borde verde al enfocar */
+  outline: none; /* Eliminar el borde predeterminado */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Sombra verde */
 }
 
 /* Estilo para las etiquetas */
@@ -78,30 +91,34 @@ form button[type="submit"] {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1.1em;
   margin-right: 10px;
-  transition: background-color 0.3s;
+  
 }
 
 form button[type="submit"]:hover {
   background-color: #45a049;
+  
 }
+
 
 /* Enlace "Listar" */
 form a {
   text-decoration: none;
   background-color: #ccc;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1.1em;
   color: black;
   display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 form a:hover {
   background-color: #b5b5b5;
+  text-decoration: none;
 }
 
 /* Estilos para los mensajes de error (alert-danger ya está definida) */
@@ -120,6 +137,40 @@ form input[type="file"] {
 /* Espaciado adicional para las imágenes */
 form div {
   margin-bottom: 20px;
+}
+
+
+
+/* Estilo para el h1 (Título de la página) */
+.titulo {
+  font-size: 3em;
+  font-weight: 700;
+  color: transparent; /* Hacemos que el texto sea transparente para que se vea el fondo */
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  position: relative; /* Necesario para el pseudo-elemento */
+  padding: 20px;
+  background: linear-gradient(45deg, #fad628, #84c3d6, #30824b); /* Colores Pokémon */
+  background-size: 400% 400%; /* Hace que el gradiente sea más grande y animado */
+  -webkit-background-clip: text; /* Aplica el gradiente solo al texto en WebKit browsers */
+  background-clip: text; /* Aplica el gradiente solo al texto */
+  animation: moverFondo 2s ease infinite; /* Animación para mover el fondo */
+}
+
+/* Animación para mover el fondo */
+@keyframes moverFondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 

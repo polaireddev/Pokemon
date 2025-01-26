@@ -13,7 +13,7 @@ $user = $controlador->ver($id);
 ?>
 <main id="mainShowUsuario">
     
-        <h1>Ver Usuario</h1>
+        <h1 class="titulo">Ver Usuario</h1>
     
     <div id="contenidoShowUsuario">
         <div>

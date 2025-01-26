@@ -2,10 +2,11 @@
 #mainShow{
     width: 100%;
     text-align: center;
+    background-color: white;
 }
 
 #mainShow > div > h1{
-    color: #333;
+    /* color: #333; */
 }
 
 #contenidoShow{

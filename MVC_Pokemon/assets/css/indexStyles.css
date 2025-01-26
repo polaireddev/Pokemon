@@ -4,7 +4,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+
 
 body {
   display: grid;
@@ -16,7 +19,6 @@ body {
 }
 
 #div_middle > h1 {
-  font-family: "PokemonSolid";
   letter-spacing: 5px;
   color: #f3f3f3;
   font-size: 30px;
@@ -64,7 +66,21 @@ body {
     width: 20px;
     fill: #ffff;
 }
+#div_end a:first-of-type {
+  font-size: 10px;
+  color: rgb(9, 138, 5); /* Cambia el color si lo deseas */
+}
 
+
+
+#div_start{
+  display: flex;
+  flex-direction: column;
+color: #ffff;
+gap: 10px;
+align-items: center;
+
+}
 /*NAVBAR*/
 /*
 .container-fluid {
@@ -80,6 +96,12 @@ body {
   flex-direction: row;
   background-color: #f8f9fa;
   border-radius: 8px;
+  background-image: url(../img/pok1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* La imagen cubre todo el contenedor */
+  background-repeat: no-repeat;
+  background-size: 75%; /* Sobredimensiona la imagen al 200% del tamaño del contenedor */
+  background-position: 90%; /
 
   
   
@@ -103,7 +125,6 @@ body {
 }
 
 #contenedor_navbar {
-  border: 1px solid red;
   width: 20%;
 }
 
@@ -118,11 +139,12 @@ body {
 .nav-item {
   position: relative;
   display: inline-block;
+  text-decoration: none;
 }
+
 
 .nav-link {
   text-decoration: none;
-  font-family: "PokemonSolid";
   font-size: 25px;
   padding: 10px 15px;
   display: block;
@@ -131,6 +153,7 @@ body {
 
 .nav-link:hover {
   color: #007bff;
+  text-decoration: none;
 }
 
 /* Estilo del menú desplegable */
@@ -163,8 +186,10 @@ body {
   display: block;
   text-decoration: none;
   color: #333;
-  font-size: 25px;
+  font-size: 20px;
+  
 }
+
 
 .dropdown-toggle {
   padding: 30px;
@@ -191,3 +216,4 @@ body {
   grid-row-start: 3;
   grid-row-end: -1;
 }
+
