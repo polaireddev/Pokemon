@@ -1,0 +1,164 @@
+/* Estilo para el contenedor principal de la ficha del Pokémon */
+#mainShow{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+#mainShow > div > h1{
+    /* color: #333; */
+}
+
+#contenidoShow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#fichaPokemon, #fichaPokemonEvolucion{
+    width: 100%;
+    max-width: 400px;  /* Limita el tamaño máximo de la tarjeta */
+    margin: 20px auto;  /* Centra el contenedor */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+#fichaPokemon h5, #fichaPokemonEvolucion h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la imagen */
+#fichaPokemon img, #fichaPokemonEvolucion img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+    /*border-radius: 5%;*/
+    /*border: 3px solid #ddd;*/ /* Borde alrededor de la imagen */
+}
+
+/* Estilo para el bloque de texto del Pokémon */
+#fichaPokemon p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la evolución (si existe) */
+#fichaPokemonEvolucion {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Enlace para volver al listado */
+#fichaPokemon a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#fichaPokemon a:hover {
+    background-color: #45a049;
+}
+
+/* Flecha entre los Pokémon*/
+.flecha {
+    font-size: 30px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+a{
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+/*ESTILOS PARA VISTA SHOW DE USUARIOS*/
+
+#mainShowUsuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo para el título */
+#mainShowUsuario > h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo para el contenedor principal */
+#contenidoShowUsuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: flex-start; /* Alinea el contenido en la parte superior */
+    padding: 20px;
+    width: 100%;
+    height: auto; /* Ajusta la altura según el contenido */
+}
+
+/* Estilo para las tarjetas de usuario */
+#contenidoShowUsuario > div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Estilo para el párrafo de información */
+#contenidoShowUsuario > div > p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el enlace */
+#contenidoShowUsuario > div > a {
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contenidoShowUsuario > div > a:hover {
+    text-decoration: underline;
+}
+

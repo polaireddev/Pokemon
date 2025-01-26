@@ -1,0 +1,125 @@
+@import url("fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+}
+
+
+
+body {
+  display: grid;
+  grid-template-columns: 1fr, 4fr;
+  grid-template-rows: auto minmax(100vh, 5fr) auto;
+  margin: 30px;
+  background-color: #222222;
+
+}
+
+/*HEADER*/
+.header {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+#header_contenedor a {
+  text-decoration: none;
+  color: white;
+}
+
+/*divend*/
+#div_end{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#div_end a{
+    font-size: 10px;
+}
+#signout{
+    width: 20px;
+    fill: #ffff;
+}
+#div_end a:first-of-type {
+  font-size: 10px;
+  color: rgb(9, 138, 5); /* Cambia el color si lo deseas */
+}
+#div_start{
+  display: flex;
+  flex-direction: column;
+color: #ffff;
+gap: 10px;
+align-items: center;
+
+}
+
+/*---------------------*/
+
+.container-fluid {
+  display: flex;
+}
+
+#contenedor_navbar{
+  background-color: yellow;
+  width: 100%;
+}
+
+#contenedor_main{
+  width: 100%;
+}
+
+
+
+/*Footer*/
+
+.footer {
+  grid-row-start: 3;
+  grid-row-end: -1;
+}
+
+
+#contenedor_navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  width: 100%;
+
+
+}
+
+#contenedor_navbar nav ul {
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}
+#contenedor_navbar nav ul li {
+  display: flex;
+background-color: red;
+border-radius: 8px;
+
+
+
+  
+
+}
+
+#contenedor_navbar nav ul li a{
+ color: #222222;
+ padding: 80px 150px;
+    
+  
+  }
+#contenedor_navbar nav ul li a:hover {
+ text-decoration: none;
+  
+
+}
+
+
