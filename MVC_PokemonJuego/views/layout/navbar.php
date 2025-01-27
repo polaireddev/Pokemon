@@ -10,7 +10,7 @@ $pokemonsEquipo = $equipoControl->listar($_SESSION["usuario"]->id);
     <ul>
 
       <li><a href="index.php?tabla=userPokemon&accion=listar">VerPokemons</a></li>
-      <li><a href="">Equipo</a></li>
+      <li><a href="index.php?tabla=equipoPokemon&accion=crear">Equipo</a></li>
       <?php
       $disable = "";
       $ruta = "index.php?tabla=user&accion=jugar";

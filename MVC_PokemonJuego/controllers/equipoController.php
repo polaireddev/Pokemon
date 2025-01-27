@@ -2,6 +2,7 @@
 
 require_once "models/equipoModel.php";
 require_once "controllers/pokemonController.php";
+require_once "controllers/userPokemonController.php";
 class equipoController{
 
     private $model;
@@ -37,6 +38,15 @@ class equipoController{
         foreach($arrayPokemons as $idPokemon){
             array_push($pokemons, $pokemonControl->ver($idPokemon));
         }
+        return $pokemons;
+    }
+
+    public function listarTodos($idUsuario)
+    {
+        //RECIBIMOS LOS IDS DE TODOS LOS POKEMONS QUE TIENE EL USUARIO EN FORMA DE ARRAY NORMAL
+        $controlador = new userPokemonController();
+        $pokemons = $controlador->listar($idUsuario);
+        
         return $pokemons;
     }
     

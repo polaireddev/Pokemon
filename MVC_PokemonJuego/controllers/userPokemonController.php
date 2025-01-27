@@ -24,7 +24,7 @@ class userPokemonController
         $this->model->mostrarPokemonsUsuarioModel($id);
     }
 
-    public function listar($idUsuario)
+    public function listar($idUsuario): array
     {
         //RECIBIMOS LOS IDS DE TODOS LOS POKEMONS QUE TIENE EL USUARIO EN FORMA DE ARRAY NORMAL
         $arrayPokemons = $this->model->readAll($idUsuario);
