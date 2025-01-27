@@ -46,6 +46,15 @@ function router (){
                 "modificarImagenes"=>"modificarImagenes.php"
             
         ],
+        "userPokemon"=>[ //añadir routas para clientes
+                "crear"=>"create.php",
+                "buscar"=>"search.php",
+                "editar"=>"edit.php",
+                "guardar" => "store.php",
+                "ver"=> "show.php",
+                "listar"=>"list.php",
+                "borrar"=>"delete.php"
+        ]
     ];
     $tabla= $_REQUEST["tabla"];
     if (!isset($tablas[$tabla])) return"views/404.php"; 

@@ -90,7 +90,7 @@ INSERT INTO pokemon (nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen)
 
 ("krookodile", 16, 17, "Tierra", 3, NULL, "assets/pokemons/krookodile"),#28
 ("krokorok", 16, 17, "Tierra", 2, 28, "assets/pokemons/krokorok"),		#29
-("sandile", 16, 17, "Tierra", 1, 29, "assets/pokemons/sandile");		#30
+("sandile", 16, 17, "Tierra", 1, 29, "assets/pokemons/sandile"),		#30
 ("ratata", 16, 17, "Normal", 1, NULL, "assets/pokemons/ratata");  #31
 
 
@@ -122,5 +122,36 @@ VALUES
 INSERT INTO equipo_usuario(usuario_id, pokemon_id)
 VALUES (2, 6);
 INSERT INTO equipo_usuario(usuario_id, pokemon_id)
+VALUES (2, 9);
+INSERT INTO equipo_usuario(usuario_id, pokemon_id)
+VALUES (2, 3);
+INSERT INTO equipo_usuario(usuario_id, pokemon_id)
 VALUES (3, 18);
+
+
+-- Usuario 1
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 3); -- Bulbasaur
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 6); -- Charmander
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 9); -- Squirtle
+
+-- Usuario 2
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 12); -- Pichu
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 15); -- Chimchar
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 18); -- Piplup
+
+-- Usuario 3
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 21); -- Turtwig
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 24); -- Shinx
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 27); -- Geodude
+
+-- Usuario 4
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 29); -- Sandile
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 3);  -- Bulbasaur
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 6);  -- Charmander
+
+-- Usuario 5
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 9);  -- Squirtle
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 12); -- Pichu
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 15); -- Chimchar
+
 

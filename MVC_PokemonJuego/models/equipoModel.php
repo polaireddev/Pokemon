@@ -65,4 +65,19 @@ class equipoModel{
         $projects = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $projects;
     }
+
+
+    public function readAll($idUsuario){
+        try {
+            $sentencia = $this->conexion->prepare("SELECT pokemon_id FROM equipo_usuario WHERE usuario_id = :usuario_id;");
+            $arrayDatos = [":usuario_id" => $idUsuario];
+            $sentencia->execute($arrayDatos);
+
+            $pokemons = $sentencia->fetchAll(PDO::FETCH_COLUMN);
+            return $pokemons;
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ', $e->getMessage(), "<br>";
+            return [];
+        }
+    } 
 }

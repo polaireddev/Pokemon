@@ -1,5 +1,5 @@
 <?php
-
+require_once "controllers/pokemonController.php";
 require_once "models/userPokemonModel.php";
 
 class userPokemonController
@@ -22,6 +22,19 @@ class userPokemonController
     
     public function mostrarPokemonsUsuario($id){
         $this->model->mostrarPokemonsUsuarioModel($id);
+    }
+
+    public function listar($idUsuario)
+    {
+        //RECIBIMOS LOS IDS DE TODOS LOS POKEMONS QUE TIENE EL USUARIO EN FORMA DE ARRAY NORMAL
+        $arrayPokemons = $this->model->readAll($idUsuario);
+
+        $pokemonControl = new pokemonController();
+        $pokemons = [];
+        foreach($arrayPokemons as $idPokemon){
+            array_push($pokemons, $pokemonControl->ver($idPokemon));
+        }
+        return $pokemons;
     }
 
 
