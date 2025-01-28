@@ -14,16 +14,17 @@ class equipoModel{
 
 
     //CAMBIAR
-    function asignarPokemonsEquipoModel($user_id, $pokemon_id){
+    function asignarPokemonsEquipoModel($user_id, $pokemon_id, $numeroPokemon){
 
-        $sql = "INSERT INTO equipo_usuario(usuario_id, pokemon_id)  VALUES (:usuario_id, :pokemon_id);";
+        $sql = "INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)  VALUES (:usuario_id, :pokemon_id, :numeroPokemon);";
 
     try {
         $sentencia = $this->conexion->prepare($sql);
 
         $arrayDatos = [
             ':usuario_id' => $user_id,
-            ':pokemon_id' => $pokemon_id
+            ':pokemon_id' => $pokemon_id,
+            ':numeroPokemon' => $numeroPokemon
         ];
         $resultado = $sentencia->execute($arrayDatos);
 

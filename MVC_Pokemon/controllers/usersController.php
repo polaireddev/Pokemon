@@ -101,9 +101,9 @@ class UsersController
 
             //Asignamos en la tabla equipo
             $equipoControl = new equipoController();
-            $equipoControl -> asignarPokemons($id, $pokemon1);
-            $equipoControl -> asignarPokemons($id, $pokemon2);
-            $equipoControl -> asignarPokemons($id, $pokemon3);
+            $equipoControl -> asignarPokemons($id, $pokemon1, "pokemon1");
+            $equipoControl -> asignarPokemons($id, $pokemon2, "pokemon2");
+            $equipoControl -> asignarPokemons($id, $pokemon3, "pokemon3");
             
             
 

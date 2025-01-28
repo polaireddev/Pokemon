@@ -14,9 +14,9 @@ class equipoController{
 
 
     //CAMBIAR
-    public function asignarPokemons($user_id, $pokemon_id){
+    public function asignarPokemons($user_id, $pokemon_id, $numeroPokemon){
 
-        $this->model->asignarPokemonsEquipoModel($user_id, $pokemon_id);
+        $this->model->asignarPokemonsEquipoModel($user_id, $pokemon_id, $numeroPokemon);
 
     }
 
