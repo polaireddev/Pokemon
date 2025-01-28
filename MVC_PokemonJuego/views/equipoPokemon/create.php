@@ -122,6 +122,7 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
                                 endforeach;
                                 ?>
                             </select>
+                            <input type="hidden" name="pokemon1" value="pokemon1">
                         </div>
 
                         <div>
@@ -139,6 +140,7 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
                                 endforeach;
                                 ?>
                             </select>
+                            <input type="hidden" name="pokemon2" value="pokemon2">
                         </div>
 
                         <div>
@@ -156,7 +158,7 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
                                 ?>
                             </select>
                         </div>
-
+                        <input type="hidden" name="pokemon3" value="pokemon3">
                         <input type="submit" value="Enviar">
                     </form>
                 </div>

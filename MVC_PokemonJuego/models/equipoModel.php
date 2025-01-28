@@ -69,7 +69,7 @@ class equipoModel{
 
     public function readAll($idUsuario){
         try {
-            $sentencia = $this->conexion->prepare("SELECT pokemon_id FROM equipo_usuario WHERE usuario_id = :usuario_id;");
+            $sentencia = $this->conexion->prepare("SELECT pokemon_id FROM equipo_usuario WHERE usuario_id = :usuario_id ORDER BY numeroPokemon;");
             $arrayDatos = [":usuario_id" => $idUsuario];
             $sentencia->execute($arrayDatos);
 
@@ -81,7 +81,7 @@ class equipoModel{
         }
     } 
 
-    public function crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3) {
+    public function crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3, $order1, $order2, $order3) {
         try {
             // Paso 1: Borrar los Pokémon existentes del equipo del usuario
             $sqlBorrar = "DELETE FROM equipo_usuario WHERE usuario_id = :idUsuario";
@@ -90,17 +90,25 @@ class equipoModel{
             $sentenciaBorrar->execute([":idUsuario" => $idUsuario]);
     
             // Paso 2: Insertar los nuevos Pokémon en una sola operación
-            $sqlInsertar = "INSERT INTO equipo_usuario (usuario_id, pokemon_id) 
-                            VALUES (:idUsuario, :idPokemon1), (:idUsuario, :idPokemon2), (:idUsuario, :idPokemon3)";
-            
+            $sqlInsertar = "INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) 
+                            VALUES (:idUsuario, :idPokemon, :numeroPokemon)";
+
             $sentenciaInsertar = $this->conexion->prepare($sqlInsertar);
+
+                            for($i = 1; $i <= 3; $i ++){
+                                if($i == 1){ $idPokemon = $idPokemon1; $numeroPokemon = $order1;}
+                                elseif($i == 2){ $idPokemon = $idPokemon2; $numeroPokemon = $order2;}
+                                else{ $idPokemon = $idPokemon3; $numeroPokemon = $order3;}
+                                $sentenciaInsertar->execute([
+                                    ":idUsuario" => $idUsuario,
+                                    ":idPokemon" => $idPokemon,
+                                    ":numeroPokemon" => $numeroPokemon
+                                ]);
+                            }
+            
+            
             // Ejecutamos la sentencia de inserción para agregar los tres nuevos Pokémon al equipo
-            $sentenciaInsertar->execute([
-                ":idUsuario" => $idUsuario,
-                ":idPokemon1" => $idPokemon1,
-                ":idPokemon2" => $idPokemon2,
-                ":idPokemon3" => $idPokemon3
-            ]);
+            
     
             // Retornar verdadero si todo salió bien
             return true;

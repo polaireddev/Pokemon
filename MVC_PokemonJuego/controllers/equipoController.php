@@ -54,7 +54,7 @@ class equipoController
 
 
 
-    public function crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3)
+    public function crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3, $order1, $order2, $order3)
     {
         $error = false;
         $errores = [];
@@ -73,7 +73,7 @@ class equipoController
 
         $crear = null;
         if (!$error) {
-            $crear = $this->model->crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3);
+            $crear = $this->model->crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3, $order1, $order2, $order3);
         }
 
         if ($crear) {

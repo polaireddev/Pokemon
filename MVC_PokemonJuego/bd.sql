@@ -1,4 +1,4 @@
--- SQLBook: Code
+
 drop database  if exists pokemons;
 
 CREATE DATABASE pokemons;
@@ -44,12 +44,13 @@ CONSTRAINT pokemon_id FOREIGN KEY (`pokemon_id`) REFERENCES pokemon (`id`) ON UP
 CREATE TABLE equipo_usuario(
 usuario_id INT,
 pokemon_id INT,
+numeroPokemon VARCHAR(50),
 PRIMARY KEY (usuario_id, pokemon_id),
 CONSTRAINT usuario_id_equipo FOREIGN KEY (`usuario_id`) REFERENCES users (`id`) ON UPDATE CASCADE,
 CONSTRAINT pokemon_id_equipo FOREIGN KEY (`pokemon_id`) REFERENCES pokemon (`id`) ON UPDATE CASCADE
 );
 
-INSERT INTO users (usuario, password, administrador) VALUES ("admin", 12345678, true);
+
 
 INSERT INTO pokemon (nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen) VALUES 
 ("venusaur", 21, 18, "Planta", 3, NULL, "assets/pokemons/venusaur"), 	#1
@@ -117,16 +118,17 @@ VALUES
 ('Usuario18', 'password18', 1, 8, 7, 2, 'imagen18.png', FALSE),
 ('Usuario19', 'password19', 13, 19, 6, 4, 'imagen19.png', FALSE),
 ('Usuario20', 'password20', 4, 10, 6, 3, 'imagen20.png', FALSE);
+INSERT INTO users (usuario, password, administrador) VALUES ("admin", 12345678, true);
 
 
-INSERT INTO equipo_usuario(usuario_id, pokemon_id)
-VALUES (2, 6);
-INSERT INTO equipo_usuario(usuario_id, pokemon_id)
-VALUES (2, 9);
-INSERT INTO equipo_usuario(usuario_id, pokemon_id)
-VALUES (2, 3);
-INSERT INTO equipo_usuario(usuario_id, pokemon_id)
-VALUES (3, 18);
+INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
+VALUES (2, 6, "pokemon1");
+INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
+VALUES (2, 9, "pokemon2");
+INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
+VALUES (2, 3, "pokemon3");
+INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
+VALUES (3, 18, "pokemon1");
 
 
 -- Usuario 1
@@ -138,6 +140,9 @@ INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 9); -- Squirtle
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 12); -- Pichu
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 15); -- Chimchar
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 18); -- Piplup
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 6); -- Charmander
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 9); -- Squirtle
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 3); -- Bulbasur
 
 -- Usuario 3
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 21); -- Turtwig
@@ -153,5 +158,11 @@ INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 6);  -- Charmand
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 9);  -- Squirtle
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 12); -- Pichu
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 15); -- Chimchar
+
+
+
+
+
+
 
 

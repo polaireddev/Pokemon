@@ -15,6 +15,9 @@ $idUsuario = ($_REQUEST["idUsuarioSesion"]) ?? "";
 $idPokemon1 = ($_REQUEST["idPokemon1"]) ?? "";
 $idPokemon2 = ($_REQUEST["idPokemon2"]) ?? "";
 $idPokemon3 = ($_REQUEST["idPokemon3"]) ?? "";
+$order1= ($_REQUEST["pokemon1"]?? "");
+$order2= ($_REQUEST["pokemon2"]?? "");
+$order3= ($_REQUEST["pokemon3"]?? "");
 $_SESSION["errores"] = [];
 
 
@@ -24,7 +27,7 @@ $controladorEquipo = new equipoController(); //los pokemons en especifico que ti
 
 
 if ($_REQUEST["evento"] == "crear") {
-    $controladorEquipo->crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3);
+    $controladorEquipo->crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3, $order1, $order2, $order3);
 
 
 }
