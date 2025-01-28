@@ -8,6 +8,13 @@
     background-color: white;
   }
 
+#contenedor2divs{
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 h1{
   text-transform: uppercase;

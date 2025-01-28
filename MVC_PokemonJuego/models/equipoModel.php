@@ -80,4 +80,38 @@ class equipoModel{
             return [];
         }
     } 
+
+    public function crear($idUsuario, $idPokemon1, $idPokemon2, $idPokemon3) {
+        try {
+            // Paso 1: Borrar los Pokémon existentes del equipo del usuario
+            $sqlBorrar = "DELETE FROM equipo_usuario WHERE usuario_id = :idUsuario";
+            $sentenciaBorrar = $this->conexion->prepare($sqlBorrar);
+            // Ejecutamos la sentencia para borrar los Pokémon anteriores del equipo de este usuario
+            $sentenciaBorrar->execute([":idUsuario" => $idUsuario]);
+    
+            // Paso 2: Insertar los nuevos Pokémon en una sola operación
+            $sqlInsertar = "INSERT INTO equipo_usuario (usuario_id, pokemon_id) 
+                            VALUES (:idUsuario, :idPokemon1), (:idUsuario, :idPokemon2), (:idUsuario, :idPokemon3)";
+            
+            $sentenciaInsertar = $this->conexion->prepare($sqlInsertar);
+            // Ejecutamos la sentencia de inserción para agregar los tres nuevos Pokémon al equipo
+            $sentenciaInsertar->execute([
+                ":idUsuario" => $idUsuario,
+                ":idPokemon1" => $idPokemon1,
+                ":idPokemon2" => $idPokemon2,
+                ":idPokemon3" => $idPokemon3
+            ]);
+    
+            // Retornar verdadero si todo salió bien
+            return true;
+    
+        } catch (Exception $e) {
+            // Capturar cualquier error y retornar falso
+            // Se captura cualquier excepción, se muestra el mensaje de error y se retorna false
+            echo 'Excepción capturada en el modelo: ', $e->getMessage(), "<br>";
+            return false;
+        }
+    }
+    
+    
 }

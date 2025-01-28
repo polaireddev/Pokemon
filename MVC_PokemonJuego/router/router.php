@@ -24,7 +24,7 @@ function router (){
     if (!isset ($_REQUEST["tabla"])) return "views/inicio.php";
 
     $tablas=[
-        "user"=>[//defino las acciones permitidas para esa tabla
+        "user"=>[
                 "crear"=>"create.php",
                 "guardar" => "store.php",
                 "ver"=> "show.php",
@@ -34,7 +34,7 @@ function router (){
                 "editar"=>"edit.php"
         ],
 
-        "pokemon"=>[ //añadir routas para clientes
+        "pokemon"=>[ 
                 "crear"=>"create.php",
                 "buscar"=>"search.php",
                 "editar"=>"edit.php",
@@ -46,7 +46,7 @@ function router (){
                 "modificarImagenes"=>"modificarImagenes.php"
             
         ],
-        "userPokemon"=>[ //añadir routas para clientes
+        "userPokemon"=>[ 
                 "crear"=>"create.php",
                 "buscar"=>"search.php",
                 "editar"=>"edit.php",
@@ -55,7 +55,7 @@ function router (){
                 "listar"=>"list.php",
                 "borrar"=>"delete.php"
         ],
-        "equipoPokemon"=>[ //añadir routas para clientes
+        "equipoPokemon"=>[ 
                 "crear"=>"create.php",
                 "buscar"=>"search.php",
                 "editar"=>"edit.php",
