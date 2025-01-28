@@ -93,56 +93,7 @@ class PokemonModel{
     }
 
 
-    public function insert(array $pokemon): ?int 
-    {
-        $sql = "INSERT INTO pokemon(nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen)  
-        VALUES (:nombre, :ataque, :defensa, :tipo, :nivel, :id_evolucion, :imagen);";
 
-        try {
-            $sentencia = $this->conexion->prepare($sql);
-
-            $arrayDatos = [
-                ':nombre' => $pokemon["nombre"],
-                ':ataque' => $pokemon["ataque"],
-                ':defensa' => $pokemon["defensa"],
-                ':tipo' => $pokemon["tipo"],
-                ':nivel' => $pokemon["nivel"],
-                ':id_evolucion' => null,
-                ':imagen' => $pokemon["imagen"],
-                
-            ];
-            $resultado = $sentencia->execute($arrayDatos);
-
-        
-            return ($resultado == true) ? $this->conexion->lastInsertId() : null;
-        } catch (Exception $e) {
-            echo 'Excepción capturada: ', $e->getMessage(), "<br>";
-            return null;
-        }
-    }
-
-
-    public function editEvolution($id, $id_evolucion){
-
-        $sql = "UPDATE pokemon SET id_evolucion=:id_evolucion WHERE id = :id;";
-
-        try {
-            $sentencia = $this->conexion->prepare($sql);
-
-            $arrayDatos = [
-                ':id' => $id,
-                ':id_evolucion' => $id_evolucion,            
-            ];
-            $resultado = $sentencia->execute($arrayDatos);
-
-            return $resultado;
-
-        } catch (Exception $e) {
-            echo 'Excepción capturada: ', $e->getMessage(), "<br>";
-            return null;
-        }
-
-    }
 
 
 
@@ -186,19 +137,7 @@ class PokemonModel{
 
  
 
-public function delete(int $id): bool
-{
-    $sql = "DELETE FROM pokemon WHERE id =:id";
-    try {
-        $sentencia = $this->conexion->prepare($sql);
-        //devuelve true si se borra correctamente
-        //false si falla el borrado
-        $resultado = $sentencia->execute([":id" => $id]);
-        return ($sentencia->rowCount() <= 0) ? false : true;
-    } catch (Exception $e) {
-        echo 'Excepción capturada: ',  $e->getMessage(), "<bR>";
-        return false;
-    }
+
 
 
 
@@ -206,6 +145,6 @@ public function delete(int $id): bool
     
 
 
-}}
+}
 
 ?>

@@ -63,6 +63,10 @@ function router (){
                 "ver"=> "show.php",
                 "listar"=>"list.php",
                 "borrar"=>"delete.php"
+        ],
+        "juego"=>[ 
+                "seleccionRival"=>"seleccionRival.php",
+                "luchar"=>"luchar.php"
         ]
     ];
     $tabla= $_REQUEST["tabla"];

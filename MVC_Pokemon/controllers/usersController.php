@@ -77,9 +77,9 @@ class UsersController
 
                 //Escogemos 3 Aleatorios
 
-                $pokemon1 = 3;//$arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
-                $pokemon2 = 3;//$arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
-                $pokemon3 = 3;//$arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                $pokemon1 = $arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                $pokemon2 = $arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
+                $pokemon3 = $arrayIdPokemons[rand(1, count($arrayIdPokemons)) - 1];
 
                 while ($pokemon1 == $pokemon2 || $pokemon1 == $pokemon3 || $pokemon2 == $pokemon3){
                     if($pokemon1 == $pokemon2){

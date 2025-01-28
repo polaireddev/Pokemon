@@ -13,7 +13,7 @@ $pokemonsEquipo = $equipoControl->listar($_SESSION["usuario"]->id);
       <li><a href="index.php?tabla=equipoPokemon&accion=crear">Equipo</a></li>
       <?php
       $disable = "";
-      $ruta = "index.php?tabla=user&accion=jugar";
+      $ruta = "index.php?tabla=juego&accion=seleccionRival";
       if (count($pokemonsEquipo) != 3) {
         $disable = "disabled";
         $ruta = "#";

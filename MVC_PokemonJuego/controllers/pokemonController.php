@@ -43,58 +43,7 @@ class pokemonController
         return $pokemons;
     }
 
-    public function crear(array $arrayPokemon, $arrayImagenes): int
-    {
-        $error = false;
-        $errores = [];
-
-       
-        $_SESSION["errores"] = [];
-        $_SESSION["datos"] = [];
-
-        //campos NO VACIOS
-        $arrayNoNulos = ["nombre", "ataque", "defensa", "tipo", "nivel"];
-        $nulos = HayNulos($arrayNoNulos, $arrayPokemon); // Me devuele un array de nulo y aqui simplemente los recorre le añade un mensaje mediante un array asociativo
-        if (count($nulos) > 0) {
-            $error = true;
-            for ($i = 0; $i < count($nulos); $i++) {
-                $errores[$nulos[$i]][] = "El campo {$nulos[$i]} es nulo";
-            }
-        }
-
-        //CAMPOS UNICOS
-        $arrayUnicos = ["nombre"];
-
-        foreach ($arrayUnicos as $CampoUnico) {
-            if ($this->model->exists($CampoUnico, $arrayPokemon[$CampoUnico])) {
-                $errores[$CampoUnico][] = "El {$arrayPokemon[$CampoUnico]} de {$CampoUnico} ya existe";
-                $error = true;
-            }
-        }
-
-        //PATRON DE POKEMON
-        if (!validarPokemon($arrayPokemon["nombre"])) {
-            $errores["nombre"][] = "Carácteres del nombre incorrectos";
-            $error = true;
-        }
-
-        $id = null;
-        if (!$error) {
-            $id = $this->model->insert($arrayPokemon);
-        }
-
-        if ($id == null) {
-            $_SESSION["errores"] = $errores;
-            $_SESSION["datos"] = $arrayPokemon;
-            header("location:index.php?tabla=pokemon&accion=crear&error=true&id={$id}"); //CAMBIAR ESTO
-            exit();
-        } else {
-            unset($_SESSION["errores"]);
-            unset($_SESSION["datos"]);
-
-            return $id;
-        }
-    }
+    
 
     public function editarEvolucion($id, $id_evolucion): void
     {
@@ -137,41 +86,8 @@ class pokemonController
     }
 
 
-    public function borrar(int $id):void{
 
-        //parametros para deshabilitar boton 
-        $pokemon= $this->ver($id);
-        $borrado= $this->model->delete($id); 
-
-
-        $redireccion= "location:index.php?accion=listar&tabla=pokemon&evento=borrar&id={$id}&nombre={$pokemon->nombre}"; //datos para confirmar eldelete
-        if($borrado==false){
-            $redireccion.="&error=true";
-            header($redireccion);
-        exit();
-        }
-        else{
-            header("location:index.php?accion=listar&tabla=pokemon&evento=borrar&id={$id}&nombre={$pokemon->nombre}");
-            exit();
-        }
-        
-    
-    }
-
-    private function esBorrable(stdClass $pokemon): bool //le pasamos como paraemtro el usuario q queremos verificar
-    {
-        $borrable = true;
-        $equipoPokemon = new equipoController();
-        
-        // si ese usuario está en algún proyecto, No se puede borrar.
-        if (count($this->buscar("id_evolucion", "igualA", $pokemon->id)) > 0) 
-            $borrable = false; //aqui marcamos si es borrable como falso o no
-
-        if (count($equipoPokemon->buscar("pokemon_id", "igualA", $pokemon->id)) > 0) 
-            $borrable = false; //aqui marcamos si es borrable como falso o no
-
-        return $borrable;
-    }
+   
 
 
     

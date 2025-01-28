@@ -1,4 +1,4 @@
-
+-- SQLBook: Code
 drop database  if exists pokemons;
 
 CREATE DATABASE pokemons;
@@ -98,45 +98,25 @@ INSERT INTO pokemon (nombre, ataque, defensa, tipo, nivel, id_evolucion, imagen)
 
 INSERT INTO users (usuario, password, partidas_ganadas, partidas_jugadas, partidas_perdidas, evoluciones_disponibles, imagen, administrador)
 VALUES
-('Usuario1', 'password1', 10, 20, 10, 5, 'imagen1.png', FALSE),
-('Usuario2', 'password2', 15, 30, 15, 3, 'imagen2.png', TRUE),
-('Usuario3', 'password3', 8, 15, 7, 2, 'imagen3.png', FALSE),
-('Usuario4', 'password4', 20, 25, 5, 7, 'imagen4.png', FALSE),
-('Usuario5', 'password5', 0, 5, 5, 1, 'imagen5.png', FALSE),
-('Usuario6', 'password6', 12, 18, 6, 4, 'imagen6.png', FALSE),
-('Usuario7', 'password7', 9, 12, 3, 6, 'imagen7.png', TRUE),
-('Usuario8', 'password8', 5, 10, 5, 0, 'imagen8.png', FALSE),
-('Usuario9', 'password9', 7, 15, 8, 3, 'imagen9.png', FALSE),
-('Usuario10', 'password10', 18, 22, 4, 8, 'imagen10.png', FALSE),
-('Usuario11', 'password11', 14, 28, 14, 3, 'imagen11.png', TRUE),
-('Usuario12', 'password12', 6, 11, 5, 2, 'imagen12.png', FALSE),
-('Usuario13', 'password13', 11, 20, 9, 5, 'imagen13.png', FALSE),
-('Usuario14', 'password14', 2, 6, 4, 1, 'imagen14.png', FALSE),
-('Usuario15', 'password15', 16, 23, 7, 9, 'imagen15.png', FALSE),
-('Usuario16', 'password16', 3, 9, 6, 0, 'imagen16.png', TRUE),
-('Usuario17', 'password17', 19, 21, 2, 8, 'imagen17.png', FALSE),
-('Usuario18', 'password18', 1, 8, 7, 2, 'imagen18.png', FALSE),
-('Usuario19', 'password19', 13, 19, 6, 4, 'imagen19.png', FALSE),
-('Usuario20', 'password20', 4, 10, 6, 3, 'imagen20.png', FALSE);
+('Patri', 'patri', 10, 20, 10, 5, 'imagen1.png', FALSE),
+('Marco', 'marco', 15, 30, 15, 3, 'imagen2.png', FALSE),
+('Jesus', 'jesus', 8, 15, 7, 2, 'imagen3.png', FALSE),
+('JuanCarlos', 'juancarlos', 20, 25, 5, 7, 'imagen4.png', FALSE),
+('Manu', 'manu', 0, 5, 5, 1, 'imagen5.png', FALSE),
+('Dani', 'dani', 12, 18, 6, 4, 'imagen6.png', FALSE);
 INSERT INTO users (usuario, password, administrador) VALUES ("admin", 12345678, true);
 
-
-INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
-VALUES (2, 6, "pokemon1");
-INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
-VALUES (2, 9, "pokemon2");
-INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
-VALUES (2, 3, "pokemon3");
-INSERT INTO equipo_usuario(usuario_id, pokemon_id, numeroPokemon)
-VALUES (3, 18, "pokemon1");
-
-
--- Usuario 1
+-- Usuario 1: Patri
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 3); -- Bulbasaur
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 6); -- Charmander
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (1, 9); -- Squirtle
 
--- Usuario 2
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (1, 3, "pokemon1");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (1, 6, "pokemon2");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (1, 9, "pokemon3");
+
+
+-- Usuario 2: Marco
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 12); -- Pichu
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 15); -- Chimchar
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 18); -- Piplup
@@ -144,22 +124,49 @@ INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 6); -- Charmande
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 9); -- Squirtle
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (2, 3); -- Bulbasur
 
--- Usuario 3
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (2, 15, "pokemon1");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (2, 18, "pokemon2");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (2, 9, "pokemon3");
+
+
+-- Usuario 3: Jesus
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 21); -- Turtwig
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 24); -- Shinx
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (3, 27); -- Geodude
 
--- Usuario 4
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (3, 21, "pokemon1");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (3, 24, "pokemon2");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (3, 27, "pokemon3");
+
+
+-- Usuario 4: Juan Carlos
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 29); -- Sandile
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 3);  -- Bulbasaur
 INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (4, 6);  -- Charmander
 
--- Usuario 5
-INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 9);  -- Squirtle
-INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 12); -- Pichu
-INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 15); -- Chimchar
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (4, 6, "pokemon1");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (4, 29, "pokemon2");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (4, 3, "pokemon3");
 
 
+-- Usuario 5: Manu
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 24); -- Shinx
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 27); -- Geodude
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (5, 30); -- Sandile
+
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (5, 24, "pokemon1");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (5, 27, "pokemon2");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (5, 30, "pokemon3");
+
+
+-- Usuario 6: Dani
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (6, 3);  -- Bulbasaur
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (6, 6);  -- Charmander
+INSERT INTO pokemon_usuario (usuario_id, pokemon_id) VALUES (6, 9);  -- Squirtle
+
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (6, 3, "pokemon1");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (6, 6, "pokemon2");
+INSERT INTO equipo_usuario (usuario_id, pokemon_id, numeroPokemon) VALUES (6, 9, "pokemon3");
 
 
 
