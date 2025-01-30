@@ -3,6 +3,12 @@ require_once "controllers/equipoController.php";
 
 $equipoControl = new equipoController();
 $pokemonsEquipo = $equipoControl->listar($_SESSION["usuario"]->id);
+
+if(isset($_SESSION["rival"])){
+  unset($_SESSION["rival"]);
+  unset($_SESSION["jugador"]);
+  unset($_SESSION["ganador"]);
+}
 ?>
 
 <div id="contenedor_navbar">

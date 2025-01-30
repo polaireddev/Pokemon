@@ -43,6 +43,24 @@ class JuegoController{
         return $equipoPokemon;
     }
 
+    function sumarPartidas($idJugador){
+        $controladorUsuarios = new UsersController();
+
+        $controladorUsuarios->sumarPartidas($idJugador);
+    }
+
+    function sumarPartidasGanadas($idJugador){
+        $controladorUsuarios = new UsersController();
+
+        $controladorUsuarios->sumarPartidasGanadas($idJugador);
+    }
+
+    function sumarPartidasPerdidas($idJugador){
+        $controladorUsuarios = new UsersController();
+
+        $controladorUsuarios->sumarPartidasPerdidas($idJugador);
+    }
+
 
 }
 

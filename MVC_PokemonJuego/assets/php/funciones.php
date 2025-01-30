@@ -84,6 +84,20 @@ function DibujarErrores($errores, $campo)
 
 //FUNCIONES DE COMBATE
 
+function calcularGanador($equipo, $equipoRival){
+    $mensajes=[];
+
+    foreach($equipo as $index => $pokemon){
+        if($pokemon->poder > $equipoRival[$index]->poder){
+            $mensajes["ronda".($index+1)]="pokemonJugador";
+        }
+        else {
+            $mensajes["ronda".($index+1)]="pokemonRival";
+        }
+    }
+    return $mensajes;
+}
+
 
 function calcularPuntuacion($pokemon, $tipoPokemon2): int
 {

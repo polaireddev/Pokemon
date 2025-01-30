@@ -34,6 +34,32 @@ class UsersController
     }
 
 
+    function sumarPartidas($idJugador){
+        $this->model->sumarPartidas($idJugador);
+
+        $numPartidas = $this->model->verPartidasJugadas($idJugador);
+        if($numPartidas%10==0){
+            $controladorUserPokemon = new userPokemonController();
+            $controladorUserPokemon->insertarPokemonUsuario($idJugador);
+        }
+    }
+
+    function sumarPartidasGanadas($idJugador){
+        $this->model->sumarPartidasGanadas($idJugador);
+
+        $numPartidas = $this->model->verPartidasGanadas($idJugador);
+        if($numPartidas%10==0){
+            $this->model->insertarEvolucion($idJugador);
+        }
+    }
+
+    function sumarPartidasPerdidas($idJugador){
+        $this->model->sumarPartidasPerdidas($idJugador);
+
+        
+    }
+
+
 
 
 

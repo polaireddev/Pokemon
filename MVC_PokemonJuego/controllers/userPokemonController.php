@@ -2,6 +2,7 @@
 require_once "controllers/pokemonController.php";
 require_once "models/userPokemonModel.php";
 
+
 class userPokemonController
 {
 
@@ -35,6 +36,41 @@ class userPokemonController
             array_push($pokemons, $pokemonControl->ver($idPokemon));
         }
         return $pokemons;
+    }
+
+    public function insertarPokemonUsuario($idUsuario){
+        $controladorPokemon = new pokemonController();
+        $arrayPokemonsLvl1 = $controladorPokemon->devolverPokemonsLvl1();
+
+        $pokemonsUsuario = $this->model->readAll($idUsuario);
+        $arrayPokemonsLvl1Usuario = [];
+
+        //Recogemos todos los pokemons de nivel 1 del usuario
+        foreach($pokemonsUsuario as $pokemonUsuario){
+            foreach($arrayPokemonsLvl1 as $pokemonlvl1){
+                if ($pokemonUsuario == $pokemonlvl1){
+                    array_push($arrayPokemonsLvl1Usuario, $pokemonUsuario);
+                }
+            }
+        }
+
+        //Guardamos los pokemons de lvl 1 que el usuario no tiene
+        $pokemonsLvl1Libres = [];
+        foreach ($arrayPokemonsLvl1 as $pokemonlvl1){
+            $contador = 0;
+            foreach ($arrayPokemonsLvl1Usuario as $pokemonUsuario){
+                if ($pokemonlvl1 == $pokemonUsuario){
+                    $contador++;
+                }
+            }
+            if($contador == 0){
+                array_push($pokemonsLvl1Libres, $pokemonlvl1);
+            }
+        }
+
+        $pokemonAsignado = $pokemonsLvl1Libres[rand(1, count($pokemonsLvl1Libres)) - 1];
+
+        $this->model->asignarPokemonsModel($idUsuario, $pokemonAsignado);
     }
 
 
