@@ -4,13 +4,26 @@ require_once "controllers/JuegoController.php";
 $controladorJuego = new JuegoController();
 $idRivalSelect = $_REQUEST["idRival"];
 $equipoUsuarioSesion = $controladorJuego->devolverEquipo($_SESSION["usuario"]->id);
+
 $equipoRival = $controladorJuego->devolverEquipo($idRivalSelect);
 $usuarioRival = $controladorJuego->devolverRival($idRivalSelect);
+
+//Calcular poder del equipo ususario
+
+for($i = 0; $i < count($equipoUsuarioSesion); $i++){
+    $equipoUsuarioSesion[$i]->poder = calcularPuntuacion($equipoUsuarioSesion[$i], $equipoRival[$i]->tipo);
+}
+
+//Calcular poder del equipo rival
+
+for($i = 0; $i < count($equipoRival); $i++){
+    $equipoRival[$i]->poder = calcularPuntuacion($equipoRival[$i], $equipoUsuarioSesion[$i]->tipo);
+}
+
+
+
 $visibilidad = "";
 $mensaje = "";
-
-
-
 
 
 
@@ -111,13 +124,29 @@ $mensaje = "";
 
             </div>
 
+            <!--TERMINA AQUI CONTENEDOR EQUIPO RIVAL-->
 
-            <!--TEWRMINA AQUI CONTENEDOR EQUIPO RIVAL-->
+           
+
+
+                        <!--div luchar-->
+            <div class="botonLuchar">
+                <form action="<?=$_SERVER["PHP_SELF"]?>" method="post">
+                    
+
+                </form>
+            </div>
+                        <!--boton luhcar-->
+
 
 
 
         </div>
         <!---aqui temiran contedor 2 divs-->
+
+
+
+      
 
         <div>
             <a href="index.php?tabla=juego&accion=seleccionRival">Volver al Menú</a>

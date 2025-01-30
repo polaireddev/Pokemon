@@ -1,5 +1,6 @@
 <?php
 require_once "controllers/juegoController.php";
+require_once "assets/php/funciones.php";
 
 
 
@@ -21,6 +22,9 @@ $rivales=$controladorJuego->devolverRivales();
 
 //Rival Aleatorio
 $posicionAleatoria = rand(1, count($rivales)) -1;
+while ($rivales[$posicionAleatoria]->id == $_SESSION["usuario"]->id){
+    $posicionAleatoria = rand(1, count($rivales)) -1;
+}
 $idRival = $rivales[$posicionAleatoria]->id;
 
 
@@ -78,7 +82,9 @@ $idRival = $rivales[$posicionAleatoria]->id;
                              
                                 <?php
                                 foreach ($rivales as $rival):
-                                    echo "<option value='{$rival->id}'> {$rival->usuario}  </option>";
+                                    if($rival->id != $_SESSION["usuario"]->id){
+                                        echo "<option value='{$rival->id}'> {$rival->usuario}  </option>";
+                                    }
                                 endforeach;
                                 ?>
                                 
