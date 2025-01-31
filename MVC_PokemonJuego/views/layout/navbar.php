@@ -35,7 +35,7 @@ $_SESSION["usuario"] = $usersControl->ver($_SESSION["usuario"]->id);
         $ruta = "#";
       }
       ?>
-       <li><a class="<?= $disable ?>" href="<?= $ruta ?>">Evolucionar</a></li>
+       <li><a class="<?= $disable ?>" href="<?= $ruta ?>">Luchar</a></li>
 
 
       <?php
