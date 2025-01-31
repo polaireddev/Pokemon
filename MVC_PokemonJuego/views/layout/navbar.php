@@ -24,8 +24,8 @@ $_SESSION["usuario"] = $usersControl->ver($_SESSION["usuario"]->id);
   <nav>
     <ul>
 
-      <li><a href="index.php?tabla=userPokemon&accion=listar">VerPokemons</a></li>
-      <li><a href="index.php?tabla=equipoPokemon&accion=crear">Equipo</a></li>
+      <li><a href="index.php?tabla=userPokemon&accion=listar">POKEMONS</a></li>
+      <li><a href="index.php?tabla=equipoPokemon&accion=crear">EQUIPO</a></li>
 
       <?php
       $disable = "";
@@ -35,7 +35,7 @@ $_SESSION["usuario"] = $usersControl->ver($_SESSION["usuario"]->id);
         $ruta = "#";
       }
       ?>
-       <li><a class="<?= $disable ?>" href="<?= $ruta ?>">Luchar</a></li>
+       <li><a class="<?= $disable ?>" href="<?= $ruta ?>">LUCHAR</a></li>
 
 
       <?php
@@ -46,7 +46,7 @@ $_SESSION["usuario"] = $usersControl->ver($_SESSION["usuario"]->id);
         $ruta2 = "#";
 
       }?>
-      <li><a class="<?= $disable2 ?>" href="<?= $ruta2 ?>">Evolucionar</a></li>
+      <li><a class="<?= $disable2 ?>" href="<?= $ruta2 ?>">EVOLUCIONAR</a></li>
 
       
       

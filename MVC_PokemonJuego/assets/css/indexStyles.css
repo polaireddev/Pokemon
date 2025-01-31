@@ -219,8 +219,8 @@ align-items: center;
   
   }
 #contenedor_navbar> nav >ul> li> a:hover {
-  transform: scale(1.1); /* Agranda el enlace sin afectar el layout */
-  transition: transform 0.3s ease-in-out;
+  transform: scale(1.3); /* Agranda el enlace sin afectar el layout */
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
   text-decoration: none;
 
   
