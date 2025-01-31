@@ -35,7 +35,7 @@ $_SESSION["usuario"] = $usersControl->ver($_SESSION["usuario"]->id);
       }
       ?>
       <li><button class="<?= $disable ?>"><a href="<?= $ruta ?>">Jugar Partida</a></button></li>
-      <li><a href="">Evolucionar</a></li>
+      <li><a href="index.php?tabla=userPokemon&accion=evolucionar">Evolucionar</a></li>
     </ul>
 
 

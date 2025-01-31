@@ -18,6 +18,7 @@ class pokemonController
     {
         return $this->model->read($id);
     }
+    
 
     public function devolverPokemonsLvl1()
     {

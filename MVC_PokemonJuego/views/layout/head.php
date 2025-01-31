@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/show.css">
   <link rel="stylesheet" href="assets/css/modificarImagenes.css">
   <link rel="stylesheet" href="assets/css/modificarEvolucion.css">
+  <link rel="stylesheet" href="assets/css/evolucionar.css">
  </head>
 <body>
   <header class="header">

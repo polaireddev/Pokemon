@@ -120,6 +120,22 @@ class equipoModel{
             return false;
         }
     }
+
+
+    public function eliminarPokemonEquipoModel($idUsuario, $idPokemon){
+        try {
+            $sqlBorrar = "DELETE FROM equipo_usuario WHERE usuario_id = :idUsuario AND pokemon_id = :idPokemon";
+            $sentenciaBorrar = $this->conexion->prepare($sqlBorrar);
+            // Ejecutamos la sentencia para borrar los Pokémon anteriores del equipo de este usuario
+            $sentenciaBorrar->execute([":idUsuario" => $idUsuario, ":idPokemon"=>$idPokemon]);
+        
+            //return $sentenciaBorrar;
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ', $e->getMessage(), "<br>";
+            return null;
+        }
+
+    }
     
     
 }

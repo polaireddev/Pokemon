@@ -29,7 +29,7 @@ class equipoController
         return $pokemons;
     }
 
-    public function listar($idUsuario) //ME DEVUELVE LOS POKEMONS DEL EQUIPO  SOLO?
+    public function listar($idUsuario) //ME DEVUELVE LOS POKEMONS DEL EQUIPO 
     {
         //RECIBIMOS LOS IDS DE TODOS LOS POKEMONS QUE TIENE EL USUARIO EN FORMA DE ARRAY NORMAL??? 
         $arrayPokemons = $this->model->readAll($idUsuario);
@@ -84,5 +84,10 @@ class equipoController
             header("location:index.php?tabla=equipoPokemon&accion=crear&error=true");
             exit();
         }
+    }
+
+
+    public function eliminarPokemonEquipo($idUsuario, $idPokemon){
+        $this->model->eliminarPokemonEquipoModel($idUsuario, $idPokemon);
     }
 }

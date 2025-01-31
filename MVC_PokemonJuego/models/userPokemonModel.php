@@ -64,6 +64,15 @@
             }
         } 
 
+
+        public function modificarEvolucionModel($idPokemon, $idPokemonEvolucion, $idUsuario){
+
+            $sentencia = $this->conexion->prepare("UPDATE pokemon_usuario SET pokemon_id = :idPokemonEvolucion WHERE usuario_id = :idUsuario AND pokemon_id = :idPokemon");
+            $arrayDatos = [":idUsuario" => $idUsuario, ":idPokemon" => $idPokemon, ":idPokemonEvolucion" => $idPokemonEvolucion];
+            $sentencia->execute($arrayDatos);
+
+        }
+
     }
 
 

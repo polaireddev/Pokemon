@@ -47,13 +47,10 @@ function router (){
             
         ],
         "userPokemon"=>[ 
-                "crear"=>"create.php",
-                "buscar"=>"search.php",
-                "editar"=>"edit.php",
-                "guardar" => "store.php",
                 "ver"=> "show.php",
                 "listar"=>"list.php",
-                "borrar"=>"delete.php"
+                "evolucionar"=>"evolucionar.php",
+                "confirmarEvolucion"=>"confirmarEvolucion.php"
         ],
         "equipoPokemon"=>[ 
                 "crear"=>"create.php",
@@ -69,6 +66,7 @@ function router (){
                 "luchar"=>"luchar.php",
                 "final"=>"final.php"
         ]
+        
     ];
     $tabla= $_REQUEST["tabla"];
     if (!isset($tablas[$tabla])) return"views/404.php"; 
