@@ -31,4 +31,7 @@ $pokemons = $controlador->listarPokemonsLvlBajo($_SESSION["usuario"]->id);
     <?php endforeach ?>   
 
 </div>
+<div>
+    <a href="index.php">Volver al Menú</a>
+</div>
 </main>

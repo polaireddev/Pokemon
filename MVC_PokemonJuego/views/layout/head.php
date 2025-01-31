@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="assets/css/modificarImagenes.css">
   <link rel="stylesheet" href="assets/css/modificarEvolucion.css">
   <link rel="stylesheet" href="assets/css/evolucionar.css">
+  <link rel="stylesheet" href="assets/css/seleccionarRival.css">
+  <link rel="stylesheet" href="assets/css/luchar.css">
+  <link rel="stylesheet" href="assets/css/lucharFinal.css">
  </head>
 <body>
   <header class="header">

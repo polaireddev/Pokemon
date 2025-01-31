@@ -1,0 +1,233 @@
+#contenedor_main{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+
+#contenedor_listar_select{
+    display: flex;
+    width: 60%;
+    height: 60%;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: black;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: url('../img/premium2.jpg') center/cover repeat;
+    background-position:  center -125px;
+    color: #E0E0E0;
+    border: 2px solid #555;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    position: relative; /* Necesario para el pseudo-elemento */
+    z-index: 0;
+    position: fixed;
+}
+#contenedor_listar_select::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Ajusta la opacidad (0.6 = 60% oscuro) */
+    border-radius: 12px; /* Coincide con el borde del contenedor */
+    z-index: 0;
+}
+
+
+#contenedor_listar_select:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  #contenedor2divs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 50px;
+    z-index: 3;
+  }
+
+ /* Título */
+.titulo {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fcfcfc;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+
+  /* Contenedor de los divs */
+#contenedor2divs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+  }
+
+
+ 
+
+  
+
+  #rivalAleatorio button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+  }
+
+  #rivalAleatorio button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+
+  /* Estilos para el enlace dentro del botón */
+#rivalAleatorio button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+
+  /* Formulario */
+#formCreate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Etiqueta */
+#formCreate label {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+
+  /* Select */
+#formCreate select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease-in-out;
+  }
+
+
+  #formCreate select:focus {
+    border: 1px solid #007bff;
+    outline: none;
+  }
+
+
+/* Botón enviar */
+#formCreate input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    text-align: center;
+  }
+
+  #formCreate input[type="submit"]:hover {
+    background: #218838;
+    transform: scale(1.1);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*Aniamaciones*/
+
+  /* Animaciones */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    #contenedor2divs {
+      flex-direction: column;
+    }
+  
+    #listaEquipo, #listaSelect {
+      width: 100%;
+    }
+  }
+
+
+ 
+
+  #menu_absolute a{
+    margin: 10px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #007bff;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    z-index: 5;
+    text-decoration: none;
+  }
+
+  #menu_absolute a:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    text-decoration: none;
+  }

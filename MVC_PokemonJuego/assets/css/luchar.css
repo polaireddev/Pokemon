@@ -1,0 +1,207 @@
+
+@import url("fonts.css");
+#contenedor_main_luchar {
+    position: relative;
+    background: url('../img/pok2.jpg');
+    background-attachment: fixed;
+    /* background-position: center 200px; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+  }
+  #contenedor_main_luchar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 4, 4, 0.7) ;
+    border-radius: 5px;
+    z-index: -1;
+  }
+
+  #contenedor_listar_luchar{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+    /* gap :30px; */
+  }
+
+
+  #contenedor2divs_luchar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    
+  }
+
+  #contenido_luchar{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #div_vs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 3em;
+  }
+
+
+
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+
+  #h1_empieza_combate{
+    color: white;
+    position: absolute;
+    top: 70px
+    
+  }
+
+  #contenedor__lucha{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 50px;
+   align-items: center;
+  }
+
+
+  #fichaPokemon_luchar {
+    width: 90%;
+    max-width: 350px;  /* Mantiene el límite de tamaño */
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e3e3e3); /* Suave degradado */
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+#fichaPokemon_luchar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título más visible */
+#fichaPokemon_luchar h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Imagen con bordes redondeados y sombra */
+#fichaPokemon_luchar img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    border-radius: 10%;
+    border: 3px solid #888;
+    background: #fff;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto hover en la imagen */
+#fichaPokemon_luchar img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Texto descriptivo mejorado */
+#fichaPokemon_luchar p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Añadir efecto de glow sutil */
+#fichaPokemon_luchar:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Efecto dorado sutil */
+}
+
+
+.boton_luchar > form > input{
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  text-align: center;
+  font-weight: bold;
+}
+.boton_luchar > form > input:hover{
+  background: #218838;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+#vs_luchar{
+  text-align: center;
+}
+#vs_luchar h1{
+    color: white;
+    font-family: "PokemonSolid";
+}
+
+
+#div_volver_menu_lucha{
+  margin-top: 20px;
+}
+
+#div_volver_menu_lucha a{
+  position: absolute;
+  margin: 20px;;
+  top: 0;
+  left: 0;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background: rgb(0,123,255);
+  color: #ffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  text-align: center;
+  
+}
+
+#div_volver_menu_lucha a:hover{
+  text-decoration: none;
+  background: rgb(0,123,255);
+  transform: scale(1.1);
+}
+
+
+

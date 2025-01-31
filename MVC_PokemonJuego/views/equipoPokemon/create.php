@@ -278,5 +278,8 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
         <a href="index.php">Volver al Menú</a>
 
     </main>
+    <?php
+unset($_SESSION["errores"]);
+    ?>
 
 </div>

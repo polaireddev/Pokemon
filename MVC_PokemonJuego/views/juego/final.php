@@ -39,7 +39,7 @@ else{
 
 
 
-<main id="contenedor_main">
+<main id="contenedor_main_lucha_final">
 
 
 
@@ -47,7 +47,7 @@ else{
         <h1><?= $mensaje  ?></h1>
 
 
-        <div id="fichaPokemon">
+        <div id="fichaPokemon_lucha_final">
             <h1> <?= $equipoGanador[0]->nombre ?></h1>
             <div>
                 <img src="<?= $equipoGanador[0]->imagen ?>/<?= $equipoGanador[0]->nombre ?>.gif" alt="">
@@ -63,7 +63,7 @@ else{
 
         </div>
 
-        <div id="fichaPokemon">
+        <div id="fichaPokemon_lucha_final">
             <h1><?= $equipoGanador[1]->nombre ?></h1>
             <div>
                 <img src="<?= $equipoGanador[1]->imagen ?>/<?= $equipoGanador[1]->nombre ?>.gif" alt="">
@@ -78,7 +78,7 @@ else{
 
         </div>
 
-        <div id="fichaPokemon">
+        <div id="fichaPokemon_lucha_final">
             <h1><?= $equipoGanador[2]->nombre ?></h1>
             <div>
                 <img src="<?= $equipoGanador[2]->imagen ?>/<?= $equipoGanador[2]->nombre ?>.gif" alt="">
@@ -93,7 +93,9 @@ else{
 
         </div>
 
-        <a href="index.php">Volver al Menú</a>
+        <div id="div_volver_menu_lucha_final">
+            <a href="index.php">Volver al Menú</a>
+        </div>
 
     </div>
 </main>

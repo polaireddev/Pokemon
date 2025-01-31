@@ -1,21 +1,39 @@
-#contenedor_main{
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
-    background-color: white;
-  }
 
-#contenedor2divs{
+
+
+  
+  #contenedor_main {
+  position: relative;
+  background: url('../img/pok2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 1px solid red;
-  gap: 50px;
+  overflow: hidden; 
+  z-index: 0;
 }
+#contenedor_main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 4, 4, 0.7) ;
+  border-radius: 5px;
+  z-index: -1;
+ 
+}
+
+
+
+
+
+
+
+
+
 
 h1{
   text-transform: uppercase;

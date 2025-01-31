@@ -1,0 +1,113 @@
+#contenedor_main_lucha_final {
+    position: relative;
+    background: url('../img/pok2.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden; 
+    z-index: 0;
+  }
+  #contenedor_main_lucha_final::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 4, 4, 0.7) ;
+    border-radius: 5px;
+    z-index: -1;
+   
+  }
+
+  h1{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  #fichaPokemon_lucha_final{
+    width: 90%;
+    max-width: 350px;  /* Mantiene el límite de tamaño */
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e3e3e3); /* Suave degradado */
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#fichaPokemon_lucha_final:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Efecto dorado sutil */
+}
+
+#fichaPokemon_lucha_final h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Estilo para la imagen */
+#fichaPokemon_lucha_final img{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    border-radius: 10%;
+    border: 3px solid #888;
+    background: #fff;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#fichaPokemon_lucha_final img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Estilo para el bloque de texto del Pokémon */
+#fichaPokemon_lucha_final p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+
+/*VOLVER AL MENU DE INICIO*/
+#div_volver_menu_lucha{
+    margin-top: 20px;
+  }
+  
+  #div_volver_menu_lucha a{
+    position: absolute;
+    margin: 20px;;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: rgb(0,123,255);
+    color: #ffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    text-align: center;
+    
+  }
+  
+  #div_volver_menu_lucha a:hover{
+    text-decoration: none;
+    background: rgb(0,123,255);
+    transform: scale(1.1);
+  }
+
+
+

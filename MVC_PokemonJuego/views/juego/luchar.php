@@ -54,77 +54,60 @@ $mensaje = "";
 
 
 
-<main id="contenedor_main">
+<main id="contenedor_main_luchar">
 
-    <div id="contenedor_listar">
+    <div id="contenedor_listar_luchar">
         <!--ESTE DIV CONTIENE LOS 2 CONTENEDORES DE EQUIPO -->
         <?php if (isset($_REQUEST["idRival"])): ?>
-        <div id="contenedor2divs">
+        <div id="contenedor2divs_luchar">
             <!--Inicio CONTENDOR EQUIPO USUARIO SESION--->
-            <div id="contenido">
+            <div id="contenido_luchar">
                 <div>
                     <h1 class="titulo">Tu equipo</h1>
                 </div>
-                <div class="<?= $clase ?>" <?= $visibilidad ?> role="alert">
-                    <?= $mensaje ?>
+
+                <!--IMPRIMIMOS LAS FICHAS DE LOS POKEMONS DEL USUARIO-->
+                <?php foreach ($equipoUsuarioSesion as $pokemon): ?>
+                <div id="fichaPokemon_luchar">
+                    <h1><?=$pokemon->nombre?></h1>
+                    <img src="<?= $pokemon->imagen ?>/<?= $pokemon->nombre ?>.gif" alt="Imagen de <?= $pokemon->nombre?>">
                 </div>
-                <table class="table-list table-light table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Pokemon</th>
-                            <th scope="col">Imagen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($equipoUsuarioSesion as $pokemon):
-                            $id = $pokemon->id;
-                        ?>
-                            <tr>
-                                <td><?= $pokemon->nombre ?></td>
-                                <td><img src="<?= $pokemon->imagen ?>/<?= $pokemon->nombre ?>.gif" alt="Imagen de <?= $pokemon->nombre ?>"></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                
+                <?php endforeach; ?>
+                <!--FIN IMPRIMIMOS LAS FICHAS DE LOS POKEMONS DEL USUARIO-->
+                
+            </div>
+
+            <div id="div_vs">
+                <?php foreach($equipoUsuarioSesion as $pokemon): ?>
+                    <div id="vs_luchar">
+                        <h1>VS</h1>
+                    </div>
+                <?php endforeach ?>
             </div>
 
             <!--CONTENDOR EQUIPO RIVAL--->
-            <div id="contenido">
+            <div id="contenido_luchar">
                 <div>
                     <h1 class="titulo">EQUIPO de <?= $usuarioRival->usuario ?></h1>
                 </div>
 
-                <div class="<?= $clase ?>" <?= $visibilidad ?> role="alert">
-                    <?= $mensaje ?>
+                <!--IMPRIMIMOS LAS FICHAS DE LOS POKEMONS DEL RIVAL-->
+                <?php foreach ($equipoRival as $pokemon): ?>
+                <div id="fichaPokemon_luchar">
+                    <h1><?=$pokemon->nombre?></h1>
+                    <img src="<?= $pokemon->imagen ?>/<?= $pokemon->nombre ?>.gif" alt="Imagen de <?= $pokemon->nombre?>">
                 </div>
-
-                <table class="table-list table-light table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Pokemon</th>
-                            <th scope="col">Imagen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($equipoRival as $pokemon):
-                            $id = $pokemon->id;
-                        ?>
-                            <tr>
-                                <td><?= $pokemon->nombre ?></td>
-                                <td><img src="<?= $pokemon->imagen ?>/<?= $pokemon->nombre ?>.gif" alt="Imagen de <?= $pokemon->nombre ?>"></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-
+                <?php endforeach; ?>
+                <!--FIN IMPRIMIMOS LAS FICHAS DE LOS POKEMONS DEL RIVAL-->
             </div>
             <!--TERMINA AQUI CONTENEDOR EQUIPO RIVAL-->
         </div>
+
         <!--div luchar-->
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=luchar" method="post">
                 <input type="submit" value="luchar" name="luchar">
-
             </form>
         </div>
         <!--boton luchar-->
@@ -134,18 +117,17 @@ $mensaje = "";
        
 
 
-        <div>
+        <div id="div_volver_menu_lucha">
             <a href="index.php?tabla=juego&accion=seleccionRival">Volver al Menú</a>
         </div>
 
         <!------------------ PRIMER COMBATE------------------------------------->
 
         <?php if ((isset($_REQUEST["luchar"]) ? $_REQUEST["luchar"] : "") || isset($_REQUEST["primerCombate"])): ?>
-            <div id="contenedor__lucha" style="border: 1px solid black; padding: 10px;">
-                <h1>Empieza el combate</h1>
-                <?php ?>
-
-                <div id="fichaPokemon">
+            <h1 id="h1_empieza_combate">Empieza el combate</h1>
+            <div id="contenedor__lucha">
+                
+            <div id="fichaPokemon_luchar">
                     <h1>Tu pokemon</h1>
                     <div>
                         <?php if(isset($_REQUEST["primerCombate"]) && $_SESSION["ganador"]["ronda1"] == "pokemonJugador"): ?>
@@ -169,11 +151,11 @@ $mensaje = "";
                     
                 </div>
 
-                <div>
+                <div id="vs_luchar">
                     <h1>VS</h1>
                 </div>
                  
-                <div id="fichaPokemon">
+                <div id="fichaPokemon_luchar">
                     <h1>Pokemon Rival</h1>
                     <div>
                         <?php if(isset($_REQUEST["primerCombate"]) && $_SESSION["ganador"]["ronda1"] == "pokemonRival"): ?>
@@ -203,11 +185,10 @@ $mensaje = "";
         <!--------------- SEGUNDO COMBATE ---------------------->
 
         <?php if (isset($_REQUEST["segundoCombate"]) || isset($_REQUEST["pasarASegundoCombate"])): ?>
+            <h1 id="h1_empieza_combate">Empieza el combate</h1>
             <div id="contenedor__lucha" style="border: 1px solid black; padding: 10px;">
-                <h1>Empieza el combate</h1>
-                <?php ?>
 
-                <div id="fichaPokemon">
+                <div id="fichaPokemon_luchar">
                     <h1>Tu pokemon</h1>
                     <div>
                         <?php if(isset($_REQUEST["segundoCombate"]) && $_SESSION["ganador"]["ronda2"] == "pokemonJugador"): ?>
@@ -232,10 +213,10 @@ $mensaje = "";
                 </div>
 
                 <div>
-                    <h1>VS</h1>
+                    <h1 id="vs_luchar">VS</h1>
                 </div>
                  
-                <div id="fichaPokemon">
+                <div id="fichaPokemon_luchar">
                     <h1>Pokemon Rival</h1>
                     <div>
                         <?php if(isset($_REQUEST["segundoCombate"]) && $_SESSION["ganador"]["ronda2"] == "pokemonRival"): ?>
@@ -272,11 +253,10 @@ $mensaje = "";
 
         <!------------TERCER COMBATE ---------------------------->
         <?php if (isset($_REQUEST["tercerCombate"] ) || isset($_REQUEST["pasarATercerCombate"])): ?>
+            <h1 id="h1_empieza_combate">Empieza el combate</h1>
             <div id="contenedor__lucha" style="border: 1px solid black; padding: 10px;">
-                <h1>Empieza el combate</h1>
-                <?php ?>
-
-                <div id="fichaPokemon">
+        
+                <div id="fichaPokemon_luchar">
                     <h1>Tu pokemon</h1>
                     <div>
                         <?php if(isset($_REQUEST["tercerCombate"]) && $_SESSION["ganador"]["ronda3"] == "pokemonJugador"): ?>
@@ -301,10 +281,10 @@ $mensaje = "";
                 </div>
 
                 <div>
-                    <h1>VS</h1>
+                    <h1 id="vs_luchar">VS</h1>
                 </div>
                  
-                <div id="fichaPokemon">
+                <div id="fichaPokemon_luchar">
                     <h1>Pokemon Rival</h1>
                     <div>
                         <?php if(isset($_REQUEST["tercerCombate"]) && $_SESSION["ganador"]["ronda3"] == "pokemonRival"): ?>
@@ -337,15 +317,15 @@ $mensaje = "";
 
 
         <?php if(isset($_REQUEST["luchar"])): ?>
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=luchar" method="post">
-                <input type="submit" value="Primer combate -Luchar " name="primerCombate">
+                <input type="submit" value="Primer combate - Luchar " name="primerCombate">
             </form>
         </div>
         <?php endif; ?>
 
         <?php if(isset($_REQUEST["primerCombate"])): ?>
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=luchar" method="post">
                 <input type="submit" value="Pasar a Segundo Combate" name="pasarASegundoCombate">
 
@@ -354,16 +334,16 @@ $mensaje = "";
         <?php endif; ?>
 
         <?php if(isset($_REQUEST["pasarASegundoCombate"])): ?>
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=luchar" method="post">
-                <input type="submit" value="Segundo Combate -Luchar" name="segundoCombate">
+                <input type="submit" value="Segundo Combate - Luchar" name="segundoCombate">
 
             </form>
         </div>
         <?php endif; ?>
 
         <?php if(isset($_REQUEST["segundoCombate"])): ?>
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=luchar" method="post">
                 <input type="submit" value="Tercer Combate" name="pasarATercerCombate">
 
@@ -372,15 +352,15 @@ $mensaje = "";
         <?php endif; ?>
 
         <?php if(isset($_REQUEST["pasarATercerCombate"])): ?>
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=luchar" method="post">
-                <input type="submit" value="Tercer Combate -Luchar" name="tercerCombate">
+                <input type="submit" value="Tercer Combate - Luchar" name="tercerCombate">
             </form>
         </div>
         <?php endif; ?>
 
         <?php if(isset($_REQUEST["tercerCombate"])): ?>
-        <div class="botonLuchar">
+        <div class="boton_luchar">
             <form action="index.php?tabla=juego&accion=final" method="post">
                 <input type="submit" value="Final" name="final">
             </form>
