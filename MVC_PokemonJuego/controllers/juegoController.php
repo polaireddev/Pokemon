@@ -62,6 +62,13 @@ class JuegoController{
     }
 
 
+    public function devolverUsuarioSesion($usuarioId){
+        $userControl = new UsersController();
+
+        $userControl->ver($usuarioId);
+    }
+
+
 }
 
 ?>

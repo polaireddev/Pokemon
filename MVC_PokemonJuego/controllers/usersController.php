@@ -48,8 +48,11 @@ class UsersController
         $this->model->sumarPartidasGanadas($idJugador);
 
         $numPartidas = $this->model->verPartidasGanadas($idJugador);
+
+        //Si se inserta una evolucion devolvemos true, sino false
         if($numPartidas%10==0){
             $this->model->insertarEvolucion($idJugador);
+           
         }
     }
 

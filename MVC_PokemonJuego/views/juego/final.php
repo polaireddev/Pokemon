@@ -4,7 +4,7 @@ require_once "controllers/juegoController.php";
 
 $_SESSION["ganador"];
 $mensaje = "";
-$rival = $_SESSION["rival"]["datos"]->usuario;
+$rival = $_SESSION["rival"]["datos"];
 $nombreUsuario = $_SESSION["usuario"]->usuario;
 $ganador = "";
 $equipoGanador = "";
@@ -16,7 +16,7 @@ if (($_SESSION["ganador"]["ronda1"] == "pokemonJugador" && $_SESSION["ganador"][
     $ganador = $_SESSION["usuario"];
     $equipoGanador = $_SESSION["jugador"]["equipo"];
 } else {
-    $mensaje =  "El ganador ha sido {$rival}";
+    $mensaje =  "El ganador ha sido {$rival->usuario}";
     $ganador = $rival;
     $equipoGanador = $_SESSION["rival"]["equipo"];
 }

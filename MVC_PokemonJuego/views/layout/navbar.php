@@ -1,17 +1,26 @@
 <?php
 require_once "controllers/equipoController.php";
+require_once "controllers/usersController.php";
 
 $equipoControl = new equipoController();
 $pokemonsEquipo = $equipoControl->listar($_SESSION["usuario"]->id);
+$usersControl = new UsersController();
 
-if(isset($_SESSION["rival"])){
+if (isset($_SESSION["rival"])) {
   unset($_SESSION["rival"]);
   unset($_SESSION["jugador"]);
   unset($_SESSION["ganador"]);
 }
+
+$_SESSION["usuario"] = $usersControl->ver($_SESSION["usuario"]->id);
 ?>
 
+
+
 <div id="contenedor_navbar">
+  <div class="evolucionesDisponibles">
+    <p>Evoluciones Disponibles: <?= $_SESSION["usuario"]->evoluciones_disponibles ?></p>
+  </div>
   <nav>
     <ul>
 
