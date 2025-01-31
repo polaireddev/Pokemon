@@ -61,17 +61,43 @@ align-items: center;
 
 .container-fluid {
   display: flex;
+  
 }
 
-#contenedor_navbar{
-  background-color: rgb(255, 255, 255);
+
+.container-fluid {
+  position: relative;
+  background: url('../img/pok2.jpg') center/cover no-repeat;
+  border-radius: 5px;
+  display: grid;
   width: 100%;
+  overflow: hidden; /* Para evitar que ::before sobresalga */
+  z-index: 0;
 }
+.container-fluid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 4, 4, 0.7) ;
+  border-radius: 5px;
+  z-index: -1;
+ 
+}
+
+
+
+
+
+
+
 
 #contenedor_main{
   width: 100%;
-}
 
+}
 
 
 /*Footer*/
@@ -87,16 +113,19 @@ align-items: center;
 
 
 #contenedor_navbar {
-  padding-left: 200px;
   display: flex;
-  justify-content: flex-start; /* Centra el contenido horizontalmente */
+  flex-direction: column;
+  border: 3px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
   align-items: center; /* Centra el contenido verticalmente */
- background-image: url("../img/duck.jpg");
+ /*background-image: url("../img/duck.jpg");*/
  background-repeat: no-repeat;
  background-size: cover;
   width: 100%;
   height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
   border: 10px solid black;
+  z-index: 2;
 }
 
 

@@ -85,6 +85,9 @@ class userPokemonController
     public function modificarEvolucion($idPokemon, $idPokemonEvolucionado, $idUsuario){
         $this->model->modificarEvolucionModel($idPokemon, $idPokemonEvolucionado, $idUsuario);
 
+        $this->model->restarEvoluciones($idUsuario);
+        //controlar que el usuario tengo evolucinoes disponibles 
+
         $equipoControl = new equipoController();
         $pokemons = $equipoControl->listar($idUsuario);
         foreach($pokemons as $pokemon){
@@ -95,6 +98,9 @@ class userPokemonController
         }
         
     }
+
+
+
 
     public function listarPokemonsLvlBajo($idUsuario): array
     {

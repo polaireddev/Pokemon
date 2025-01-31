@@ -72,8 +72,15 @@
             $sentencia->execute($arrayDatos);
 
         }
+        public function restarEvoluciones($idUsuaro){
+            $sentencia = $this->conexion->prepare("UPDATE users SET evoluciones_disponibles = evoluciones_disponibles - 1 WHERE id = :idUsuario");
+            $arrayDatos = [":idUsuario" => $idUsuaro];
+            $sentencia->execute($arrayDatos);
+        }
 
     }
+
+
 
 
 
