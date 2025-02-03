@@ -8,6 +8,8 @@
     width: 100%;
     overflow: hidden; 
     z-index: 0;
+    display: flex;
+    justify-content: center;
   }
   #contenedor_main_lucha_final::before {
     content: "";
@@ -22,9 +24,25 @@
    
   }
 
+  .contenidoFinal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 3em;
+  }
+
   h1{
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: white;
+  }
+
+  #fichasEquipoGanador{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
 
   #fichaPokemon_lucha_final{
@@ -81,11 +99,11 @@
 
 
 /*VOLVER AL MENU DE INICIO*/
-#div_volver_menu_lucha{
+#div_volver_menu_lucha_final{
     margin-top: 20px;
   }
   
-  #div_volver_menu_lucha a{
+  #div_volver_menu_lucha_final a{
     position: absolute;
     margin: 20px;;
     top: 0;
@@ -103,7 +121,7 @@
     
   }
   
-  #div_volver_menu_lucha a:hover{
+  #div_volver_menu_lucha_final a:hover{
     text-decoration: none;
     background: rgb(0,123,255);
     transform: scale(1.1);

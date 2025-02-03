@@ -186,7 +186,7 @@ $mensaje = "";
 
         <?php if (isset($_REQUEST["segundoCombate"]) || isset($_REQUEST["pasarASegundoCombate"])): ?>
             <h1 id="h1_empieza_combate">Empieza el combate</h1>
-            <div id="contenedor__lucha" style="border: 1px solid black; padding: 10px;">
+            <div id="contenedor__lucha">
 
                 <div id="fichaPokemon_luchar">
                     <h1>Tu pokemon</h1>
@@ -212,8 +212,8 @@ $mensaje = "";
                     
                 </div>
 
-                <div>
-                    <h1 id="vs_luchar">VS</h1>
+                <div id="vs_luchar">
+                    <h1>VS</h1>
                 </div>
                  
                 <div id="fichaPokemon_luchar">
@@ -254,7 +254,7 @@ $mensaje = "";
         <!------------TERCER COMBATE ---------------------------->
         <?php if (isset($_REQUEST["tercerCombate"] ) || isset($_REQUEST["pasarATercerCombate"])): ?>
             <h1 id="h1_empieza_combate">Empieza el combate</h1>
-            <div id="contenedor__lucha" style="border: 1px solid black; padding: 10px;">
+            <div id="contenedor__lucha">
         
                 <div id="fichaPokemon_luchar">
                     <h1>Tu pokemon</h1>
@@ -280,8 +280,8 @@ $mensaje = "";
                     
                 </div>
 
-                <div>
-                    <h1 id="vs_luchar">VS</h1>
+                <div id="vs_luchar">
+                    <h1>VS</h1>
                 </div>
                  
                 <div id="fichaPokemon_luchar">
