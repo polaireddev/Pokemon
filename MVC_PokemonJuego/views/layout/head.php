@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/css/seleccionarRival.css">
   <link rel="stylesheet" href="assets/css/luchar.css">
   <link rel="stylesheet" href="assets/css/lucharFinal.css">
+  <link rel="stylesheet" href="assets/css/equipo.css">
  </head>
 <body>
   <header class="header">

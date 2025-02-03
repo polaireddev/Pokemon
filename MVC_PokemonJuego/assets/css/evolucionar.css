@@ -1,6 +1,6 @@
 #contenedor_pokemons {
     position: relative;
-    background: url('../img/pok2.jpg') center/cover no-repeat;
+    background-color: transparent;
     border-radius: 5px;
     padding: 40px;
     display: grid;
@@ -17,7 +17,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(4, 4, 4, 0.7) ;
     border-radius: 5px;
 }
 
@@ -32,3 +31,31 @@
     
 }
 
+
+#div_volver_menu_evolucionar{
+    margin-top: 20px;
+  }
+  
+  #div_volver_menu_evolucionar a{
+    position: absolute;
+    margin: 20px;;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: rgb(0,123,255);
+    color: #ffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    text-align: center;
+    
+  }
+  
+  #div_volver_menu_evolucionar a:hover{
+    text-decoration: none;
+    background: rgb(0,123,255);
+    transform: scale(1.1);
+  }

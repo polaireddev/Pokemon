@@ -274,8 +274,10 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
 
 
 
-
+    <div id="div_volver_menu_equipo">
         <a href="index.php">Volver al Menú</a>
+    </div>
+        
 
     </main>
     <?php
