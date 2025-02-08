@@ -28,20 +28,19 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
 
 
 
-    <main id="contenedor_listar">
+    <main id="contenedor_listar_equipo">
 
         <!--ESTE DIV CONTIENE LISTA EQUIPO Y LISTA SELECT -->
-        <div id="contenedor2divs">
+        <div id="contenedor2divs_equipo">
             <!-- DIV LISTA EQUIPO -->
 
 
             <div id="listaEquipo">
                 <div id="contenido_listarEquipo">
-                    <h1 class="titulo">Tu equipo</h1>
-
+                    <h1 class="titulo_equipo">Tu equipo</h1>
                 </div>
 
-                <div id="contenido">
+                <div id="contenido_equipo">
                     <?php
                     if (count($equipoPokemon) <= 0):
                         echo "No hay Datos a Mostrar";
@@ -63,15 +62,7 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
                             <?= $mensaje ?>
                         </div>
 
-                        <table class="table-list table-light table-hover">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th scope="col">Pokemon</th>
-                                    <th scope="col">Imagen</th>
-
-
-                                </tr>
-                            </thead>
+                        <table class="table-list-equipo table-light table-hover">
                             <tbody>
                                 <?php foreach ($equipoPokemon as $pokemon):
                                     $id = $pokemon->id;
@@ -103,10 +94,10 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
 
             <div id="listaSelect">
                 <div>
-                    <h1 class="titulo">CREA EQUIPO</h1>
+                    <h1 class="titulo_equipo">CREA EQUIPO</h1>
                 </div>
 
-                <div id="formCreate">
+                <div id="formCreate_equipo">
                     <form action="index.php?tabla=equipoPokemon&accion=guardar&evento=crear&idUsuarioSesion=<?= $idUsuarioSesion ?>" method="POST">
                         <div>
                             <label for="idPokemon1">Pokemon 1</label>
@@ -194,65 +185,25 @@ $equipoPokemon = $controlador->listar($_SESSION["usuario"]->id) ;
 
         <div id="pokemonsLista">
 
-
-
             <div>
-                <h1 class="titulo">Tus Pokemons</h1>
+                <h1 class="titulo_equipo">Tus Pokemons</h1>
             </div>
 
-            <div id="contenido">
-                <?php
-                if (count($pokemons) <= 0):
-                    echo "No hay Datos a Mostrar";
-                else:
-                    // Comprobamos si se debe mostrar el mensaje de éxito o error
-                    if (isset($_REQUEST["evento"]) && $_REQUEST["evento"] == "borrar") {
-                        $visibilidad = "visible";
-                        $clase = "alert alert-success";
-                        // Mejorar y poner el nombre/usuario
-                        $mensaje = "El pokemon con id: {$_REQUEST['id']}, con nombre: {$_REQUEST["nombre"]} fue borrado correctamente";
+            <div id="contenido_pokemons_usuario">
 
-                        if (isset($_REQUEST["error"])) {
-                            $clase = "alert alert-danger";
-                            $mensaje = "ERROR!!! No se ha podido borrar el pokemon con id: {$_REQUEST['id']}, con nombre: {$_REQUEST["nombre"]}";
-                        }
-                    }
-                ?>
-                    <div class="<?= $clase ?>" <?= $visibilidad ?> role="alert">
-                        <?= $mensaje ?>
-                    </div>
-
-                    <table class="table-list table-light table-hover">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">Imagen</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Pokemon</th>
-                                <th scope="col">Ataque</th>
-                                <th scope="col">Defensa</th>
-                                <th scope="col">Tipo</th>
-                                <th scope="col">Nivel</th>
-                                <th scope="col">Evolución</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($pokemons as $pokemon):
-                                $id = $pokemon->id;
-                            ?>
-                                <tr>
-                                    <td><img src="<?= $pokemon->imagen ?>/<?= $pokemon->nombre ?>.gif" alt="Imagen de <?= $pokemon->nombre ?>"></td>
-                                    <th scope="row"><?= $pokemon->id ?></th>
-                                    <td><?= $pokemon->nombre ?></td>
-                                    <td><?= $pokemon->ataque ?></td>
-                                    <td><?= $pokemon->defensa ?></td>
-                                    <td><?= $pokemon->tipo ?></td>
-                                    <td><?= $pokemon->nivel ?></td>
-                                    <td><?= $pokemon->id_evolucion ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                <?php endif; ?>
+                    <?php foreach ($pokemons as $pokemon):?>
+                        <div id="fichaPokemon_usuario">
+                            <img src="<?= $pokemon->imagen?>/<?=$pokemon->nombre?>.gif" alt="">
+                            <p>
+                                Nombre: <?= $pokemon->nombre ?> <br>
+                                Ataque: <?= $pokemon->ataque ?><br>
+                                Defensa: <?= $pokemon->defensa ?><br>
+                                Tipo: <?= $pokemon->tipo ?><br>
+                                Nivel: <?= $pokemon->nivel ?><br>
+                            </p>
+                        </div>
+                    <?php endforeach; ?>
+  
             </div>
 
         </div>

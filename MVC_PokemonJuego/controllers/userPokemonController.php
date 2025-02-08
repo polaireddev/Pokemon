@@ -112,7 +112,7 @@ class userPokemonController
         $pokemons = [];
         foreach($arrayPokemons as $idPokemon){
             $comprobarPokemon = $pokemonControl->ver($idPokemon);
-            if($comprobarPokemon->nivel < 3){
+            if($comprobarPokemon->nivel < 3 && $comprobarPokemon->id_evolucion != null){
                 array_push($pokemons, $pokemonControl->ver($idPokemon));
             }
         }

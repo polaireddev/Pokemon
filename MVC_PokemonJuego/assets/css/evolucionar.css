@@ -1,3 +1,144 @@
+#contenedor_main{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+#contenedor_main {
+  position: relative;
+  background: url('../img/pok2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  width: 100%;
+  overflow: hidden; 
+  z-index: 0;
+}
+#contenedor_main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 4, 4, 0.7) ;
+  border-radius: 5px;
+  z-index: -1;
+ 
+}
+
+#no_pokemons_evolucion{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  color: white;
+}
+
+#contenido_evolucionar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contenido_evolucionar_confirmar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.flecha_evolucionar{
+  color: white;
+  font-size: 500%;
+}
+
+/*FICHAS*/
+
+#fichaPokemon_evolucionar, #fichaPokemonEvolucion_evolucionar{
+  width: 100%;
+  max-width: 400px;  /* Limita el tamaño máximo de la tarjeta */
+  margin: 20px auto;  /* Centra el contenedor */
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para la imagen */
+#fichaPokemon_evolucionar img, 
+#fichaPokemonEvolucion_evolucionar img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+  /*border-radius: 5%;*/
+  /*border: 3px solid #ddd;*/ /* Borde alrededor de la imagen */
+}
+
+/* Estilo para el bloque de texto del Pokémon */
+#fichaPokemon_evolucionar p, 
+#fichaPokemonEvolucion_evolucionar p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+
+.boton_confirmar_evolucion > form > input{
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  text-align: center;
+  font-weight: bold;
+}
+.boton_confirmar_evolucion > form > input:hover{
+  background: #218838;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #contenedor_pokemons {
     position: relative;
     background-color: transparent;
@@ -5,6 +146,7 @@
     padding: 40px;
     display: grid;
     width: 60%;
+    height: 100%;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
     overflow: hidden; /* Para evitar que ::before sobresalga */
@@ -32,11 +174,17 @@
 }
 
 
-#div_volver_menu_evolucionar{
+
+
+
+
+#div_volver_menu_evolucionar,
+#div_volver_menu_confirmar_evolucion{
     margin-top: 20px;
   }
   
-  #div_volver_menu_evolucionar a{
+  #div_volver_menu_evolucionar a,
+  #div_volver_menu_confirmar_evolucion a{
     position: absolute;
     margin: 20px;;
     top: 0;
@@ -54,7 +202,8 @@
     
   }
   
-  #div_volver_menu_evolucionar a:hover{
+  #div_volver_menu_evolucionar a:hover,
+  #div_volver_menu_confirmar_evolucion a:hover{
     text-decoration: none;
     background: rgb(0,123,255);
     transform: scale(1.1);
