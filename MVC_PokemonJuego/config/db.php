@@ -4,7 +4,7 @@ class db
   const HOST = "localhost";
   const DBNAME = "pokemons";
   const USER = "root";
-  const PASSWORD = ""; // Evidentemente adapta los valores
+  const PASSWORD = "Debian"; // Evidentemente adapta los valores
 
   static public function conexion()
   {

@@ -26,10 +26,20 @@ if (($_SESSION["ganador"]["ronda1"] == "pokemonJugador" && $_SESSION["ganador"][
 $controlador = new JuegoController();
 
 //Añadir partida jugada al usuario
-$controlador->sumarPartidas($_SESSION["usuario"]->id);
+$pok = $controlador->sumarPartidas($_SESSION["usuario"]->id);
+
+if($pok != false){
+    $_SESSION["pok"] = $pok;
+}
 
 if ($ganador->id == $_SESSION["usuario"]->id) {
-    $controlador->sumarPartidasGanadas($_SESSION["usuario"]->id);
+    $evol = $controlador->sumarPartidasGanadas($_SESSION["usuario"]->id);
+
+    if($evol != false){
+        $_SESSION["evolucion"] = $evol;
+    }
+
+
 } else {
     $controlador->sumarPartidasPerdidas($_SESSION["usuario"]->id);
 }

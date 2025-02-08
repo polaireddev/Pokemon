@@ -223,10 +223,45 @@ align-items: center;
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: whitesmoke;
+  background-color: black;
+  color: #ffffd2;
   padding: 30px;
   border-radius: 8px ;
 }
+
+.recibidoEvolucion{
+  position: absolute;
+  top: 0%;
+  left: 43%;
+  color: rgb(15, 66, 2);
+  font-weight: bold;
+  background-color: #63ff85;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: solid 3px rgb(0, 78, 0);
+}
+
+.recibidoPokemon{
+  position: absolute;
+  top: 5%;
+  left: 40.5%;
+  color: rgb(15, 75, 0);
+  background-color: #63ff85;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: solid 3px rgb(0, 78, 0);
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+
+.recibidoPokemon > img{
+  width: 80px;
+}
+
+
 
 
 

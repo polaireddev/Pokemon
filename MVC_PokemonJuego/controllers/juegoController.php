@@ -46,13 +46,28 @@ class JuegoController{
     function sumarPartidas($idJugador){
         $controladorUsuarios = new UsersController();
 
-        $controladorUsuarios->sumarPartidas($idJugador);
+        $idPokemonAsignado = $controladorUsuarios->sumarPartidas($idJugador);
+
+        if($idPokemonAsignado != false){
+            return $idPokemonAsignado;
+        }
+        else {
+            return false;
+        }
     }
 
     function sumarPartidasGanadas($idJugador){
         $controladorUsuarios = new UsersController();
 
-        $controladorUsuarios->sumarPartidasGanadas($idJugador);
+        $evol = $controladorUsuarios->sumarPartidasGanadas($idJugador);
+
+        if($evol != false){
+            return $evol;
+        }
+        else {
+            return false;
+        }
+        
     }
 
     function sumarPartidasPerdidas($idJugador){

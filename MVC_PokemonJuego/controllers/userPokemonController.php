@@ -72,6 +72,7 @@ class userPokemonController
         $pokemonAsignado = $pokemonsLvl1Libres[rand(1, count($pokemonsLvl1Libres)) - 1];
 
         $this->model->asignarPokemonsModel($idUsuario, $pokemonAsignado);
+        return $pokemonAsignado;
     }
 
 

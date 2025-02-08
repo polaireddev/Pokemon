@@ -40,7 +40,11 @@ class UsersController
         $numPartidas = $this->model->verPartidasJugadas($idJugador);
         if($numPartidas%10==0){
             $controladorUserPokemon = new userPokemonController();
-            $controladorUserPokemon->insertarPokemonUsuario($idJugador);
+            $idPokemonAsignado = $controladorUserPokemon->insertarPokemonUsuario($idJugador);
+            return $idPokemonAsignado;
+        }
+        else{
+            return false;
         }
     }
 
@@ -52,7 +56,10 @@ class UsersController
         //Si se inserta una evolucion devolvemos true, sino false
         if($numPartidas%10==0){
             $this->model->insertarEvolucion($idJugador);
-           
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
